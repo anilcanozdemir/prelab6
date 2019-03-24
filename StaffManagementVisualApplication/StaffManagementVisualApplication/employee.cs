@@ -20,7 +20,7 @@ namespace StaffManagementVisualApplication
         private int yabanci_dil_sayisi=0;
         private int tecrube=0;
         private bool evli_mi=false;
-        private bool esi_calisiyomu = false;
+        private bool esi_calismiyomu = false;
         private int kucuk_cocuk = 0;
         private int buyuk_cocuk =0;
         private int ortanca_cocuk = 0;
@@ -134,15 +134,15 @@ namespace StaffManagementVisualApplication
                 evli_mi = value;
             }
         }
-        public bool _esi_calisiyomu
+        public bool _esi_calismiyomu
         {
             get
             {
-                return esi_calisiyomu;
+                return esi_calismiyomu;
             }
             set
             {
-                esi_calisiyomu = value;
+                esi_calismiyomu = value;
             }
         }
         public int _kucuk_cocuk
@@ -346,7 +346,7 @@ namespace StaffManagementVisualApplication
             double katsayi = 0.0;
             if (_evli_mi)
             {
-                if (_esi_calisiyomu==false)
+                if (_esi_calismiyomu==true)
                 {
                     katsayi += 0.20;
                 }
@@ -370,9 +370,21 @@ namespace StaffManagementVisualApplication
                 {
                     katsayi += 0.4; 
                 }
-                else if (_buyuk_cocuk == 1 )
+                else if (_kucuk_cocuk == 1 )
                 {
                     katsayi += 0.2;
+                }
+                else if (_buyuk_cocuk == 1)
+                {
+                    katsayi += 0.4;
+                }
+                else if (_ortanca_cocuk == 1)
+                {
+                    katsayi += 0.3;
+                }
+                else if (_buyuk_cocuk >= 1 && kucuk_cocuk > 0)
+                {
+                    katsayi += 0.6;
                 }
             }
 
@@ -381,12 +393,13 @@ namespace StaffManagementVisualApplication
             return katsayi;
             
         }
-        public double bmo()
+       public double bmo()
         {
             double sonhal = 0;
             sonhal += 1+this.aile_katsayi() + this.belge_ingilizce_katsayi() +this.deneyim_katsayi() + this.il_katsayi() + this.ogrenim_katsayi() + this.yonetici_katsayi();
             sonhal *= 4500;
 
+            
             return sonhal;
         }
 

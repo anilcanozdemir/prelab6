@@ -63,6 +63,7 @@
             this.rbtnMarried = new System.Windows.Forms.RadioButton();
             this.rbtnSingle = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblbmo = new System.Windows.Forms.Label();
             this.grpbxFamily.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@
             this.lstbxStaffs.Name = "lstbxStaffs";
             this.lstbxStaffs.Size = new System.Drawing.Size(270, 264);
             this.lstbxStaffs.TabIndex = 0;
+            this.lstbxStaffs.SelectedIndexChanged += new System.EventHandler(this.lstbxStaffs_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -92,6 +94,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -101,6 +104,7 @@
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtname
             // 
@@ -485,11 +489,21 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Yöneticilik";
             // 
+            // lblbmo
+            // 
+            this.lblbmo.AutoSize = true;
+            this.lblbmo.Location = new System.Drawing.Point(192, 338);
+            this.lblbmo.Name = "lblbmo";
+            this.lblbmo.Size = new System.Drawing.Size(34, 13);
+            this.lblbmo.TabIndex = 27;
+            this.lblbmo.Text = "BMO:";
+            // 
             // StaffManagementApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 496);
+            this.Controls.Add(this.lblbmo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.grpbxFamily);
             this.Controls.Add(this.cmbmanagement);
@@ -565,6 +579,7 @@
         private System.Windows.Forms.RadioButton rbtnSingle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chckbxunemployedspouse;
+        private System.Windows.Forms.Label lblbmo;
     }
 }
 
