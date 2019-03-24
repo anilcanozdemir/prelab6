@@ -1,6 +1,6 @@
 ﻿namespace StaffManagementVisualApplication
 {
-    partial class Form1
+    partial class StaffManagementApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,19 @@
             this.chckenglishscholl = new System.Windows.Forms.CheckBox();
             this.lblotherlanguage = new System.Windows.Forms.Label();
             this.txtlanguage = new System.Windows.Forms.TextBox();
+            this.cmbmanagement = new System.Windows.Forms.ComboBox();
+            this.grpbxFamily = new System.Windows.Forms.GroupBox();
+            this.txtolder = new System.Windows.Forms.TextBox();
+            this.txtmiddle = new System.Windows.Forms.TextBox();
+            this.txtlittle = new System.Windows.Forms.TextBox();
+            this.chckbxolder = new System.Windows.Forms.CheckBox();
+            this.chckbxmiddle = new System.Windows.Forms.CheckBox();
+            this.chckbxlittle = new System.Windows.Forms.CheckBox();
+            this.rbtnMarried = new System.Windows.Forms.RadioButton();
+            this.rbtnSingle = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chckbxunemployedspouse = new System.Windows.Forms.CheckBox();
+            this.grpbxFamily.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstbxStaffs
@@ -94,7 +107,6 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(100, 20);
             this.txtname.TabIndex = 4;
-            this.txtname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtSurname
             // 
@@ -280,7 +292,7 @@
             // 
             // cmbeducation
             // 
-            this.cmbeducation.DropDownWidth = 100;
+            this.cmbeducation.DropDownWidth = 245;
             this.cmbeducation.FormattingEnabled = true;
             this.cmbeducation.Items.AddRange(new object[] {
             "Meslek alanı ile ilgili yüksek lisans",
@@ -339,11 +351,148 @@
             this.txtlanguage.Size = new System.Drawing.Size(19, 20);
             this.txtlanguage.TabIndex = 22;
             // 
-            // Form1
+            // cmbmanagement
+            // 
+            this.cmbmanagement.DropDownWidth = 300;
+            this.cmbmanagement.FormattingEnabled = true;
+            this.cmbmanagement.Items.AddRange(new object[] {
+            "Yok",
+            "Takım Lideri/Grup Yöneticisi/Teknik Yönetici/Yazılım Mimarı",
+            "Proje Yöneticisi",
+            "Direktör/Projeler Yöneticisi",
+            "CTO/Genel Müdür",
+            "Bilgi İşlem Sorumlusu/Müdürü(0-5 personel)",
+            "Bilgi İşlem Sorumlusu/Müdürü(5+personel)"});
+            this.cmbmanagement.Location = new System.Drawing.Point(598, 33);
+            this.cmbmanagement.Name = "cmbmanagement";
+            this.cmbmanagement.Size = new System.Drawing.Size(99, 21);
+            this.cmbmanagement.TabIndex = 23;
+            // 
+            // grpbxFamily
+            // 
+            this.grpbxFamily.Controls.Add(this.chckbxunemployedspouse);
+            this.grpbxFamily.Controls.Add(this.txtolder);
+            this.grpbxFamily.Controls.Add(this.txtmiddle);
+            this.grpbxFamily.Controls.Add(this.txtlittle);
+            this.grpbxFamily.Controls.Add(this.chckbxolder);
+            this.grpbxFamily.Controls.Add(this.chckbxmiddle);
+            this.grpbxFamily.Controls.Add(this.chckbxlittle);
+            this.grpbxFamily.Location = new System.Drawing.Point(540, 94);
+            this.grpbxFamily.Name = "grpbxFamily";
+            this.grpbxFamily.Size = new System.Drawing.Size(285, 157);
+            this.grpbxFamily.TabIndex = 25;
+            this.grpbxFamily.TabStop = false;
+            this.grpbxFamily.Visible = false;
+            // 
+            // txtolder
+            // 
+            this.txtolder.Location = new System.Drawing.Point(163, 76);
+            this.txtolder.Name = "txtolder";
+            this.txtolder.Size = new System.Drawing.Size(100, 20);
+            this.txtolder.TabIndex = 7;
+            this.txtolder.Visible = false;
+            // 
+            // txtmiddle
+            // 
+            this.txtmiddle.Location = new System.Drawing.Point(163, 49);
+            this.txtmiddle.Name = "txtmiddle";
+            this.txtmiddle.Size = new System.Drawing.Size(100, 20);
+            this.txtmiddle.TabIndex = 6;
+            this.txtmiddle.Visible = false;
+            // 
+            // txtlittle
+            // 
+            this.txtlittle.Location = new System.Drawing.Point(163, 23);
+            this.txtlittle.Name = "txtlittle";
+            this.txtlittle.Size = new System.Drawing.Size(100, 20);
+            this.txtlittle.TabIndex = 5;
+            this.txtlittle.Visible = false;
+            // 
+            // chckbxolder
+            // 
+            this.chckbxolder.AutoSize = true;
+            this.chckbxolder.Location = new System.Drawing.Point(6, 76);
+            this.chckbxolder.Name = "chckbxolder";
+            this.chckbxolder.Size = new System.Drawing.Size(151, 17);
+            this.chckbxolder.TabIndex = 4;
+            this.chckbxolder.Text = "18 yaş üstü öğrenci çocuk";
+            this.chckbxolder.UseVisualStyleBackColor = true;
+            this.chckbxolder.CheckedChanged += new System.EventHandler(this.chckbxolder_CheckedChanged);
+            // 
+            // chckbxmiddle
+            // 
+            this.chckbxmiddle.AutoSize = true;
+            this.chckbxmiddle.Location = new System.Drawing.Point(6, 49);
+            this.chckbxmiddle.Name = "chckbxmiddle";
+            this.chckbxmiddle.Size = new System.Drawing.Size(124, 17);
+            this.chckbxmiddle.TabIndex = 3;
+            this.chckbxmiddle.Text = "7-18 yaş arası çocuk";
+            this.chckbxmiddle.UseVisualStyleBackColor = true;
+            this.chckbxmiddle.CheckedChanged += new System.EventHandler(this.chckmiddle_CheckedChanged);
+            // 
+            // chckbxlittle
+            // 
+            this.chckbxlittle.AutoSize = true;
+            this.chckbxlittle.Location = new System.Drawing.Point(6, 20);
+            this.chckbxlittle.Name = "chckbxlittle";
+            this.chckbxlittle.Size = new System.Drawing.Size(118, 17);
+            this.chckbxlittle.TabIndex = 2;
+            this.chckbxlittle.Text = "0-6 yaş arası çocuk";
+            this.chckbxlittle.UseVisualStyleBackColor = true;
+            this.chckbxlittle.CheckedChanged += new System.EventHandler(this.chckbxlittle_CheckedChanged);
+            // 
+            // rbtnMarried
+            // 
+            this.rbtnMarried.AutoSize = true;
+            this.rbtnMarried.Location = new System.Drawing.Point(562, 71);
+            this.rbtnMarried.Name = "rbtnMarried";
+            this.rbtnMarried.Size = new System.Drawing.Size(42, 17);
+            this.rbtnMarried.TabIndex = 0;
+            this.rbtnMarried.Text = "Evli";
+            this.rbtnMarried.UseVisualStyleBackColor = true;
+            this.rbtnMarried.CheckedChanged += new System.EventHandler(this.rbtnMarried_CheckedChanged);
+            // 
+            // rbtnSingle
+            // 
+            this.rbtnSingle.AutoSize = true;
+            this.rbtnSingle.Checked = true;
+            this.rbtnSingle.Location = new System.Drawing.Point(628, 71);
+            this.rbtnSingle.Name = "rbtnSingle";
+            this.rbtnSingle.Size = new System.Drawing.Size(53, 17);
+            this.rbtnSingle.TabIndex = 1;
+            this.rbtnSingle.TabStop = true;
+            this.rbtnSingle.Text = "Bekar";
+            this.rbtnSingle.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(537, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Yöneticilik";
+            // 
+            // chckbxunemployedspouse
+            // 
+            this.chckbxunemployedspouse.AutoSize = true;
+            this.chckbxunemployedspouse.Location = new System.Drawing.Point(6, 101);
+            this.chckbxunemployedspouse.Name = "chckbxunemployedspouse";
+            this.chckbxunemployedspouse.Size = new System.Drawing.Size(88, 17);
+            this.chckbxunemployedspouse.TabIndex = 8;
+            this.chckbxunemployedspouse.Text = "Eşi çalışmıyor";
+            this.chckbxunemployedspouse.UseVisualStyleBackColor = true;
+            // 
+            // StaffManagementApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 394);
+            this.ClientSize = new System.Drawing.Size(927, 496);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.grpbxFamily);
+            this.Controls.Add(this.cmbmanagement);
+            this.Controls.Add(this.rbtnMarried);
+            this.Controls.Add(this.rbtnSingle);
             this.Controls.Add(this.txtlanguage);
             this.Controls.Add(this.lblotherlanguage);
             this.Controls.Add(this.chckenglishscholl);
@@ -367,8 +516,11 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lstbxStaffs);
-            this.Name = "Form1";
+            this.Name = "StaffManagementApplication";
             this.Text = "StaffManagementApplication";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.grpbxFamily.ResumeLayout(false);
+            this.grpbxFamily.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +551,18 @@
         private System.Windows.Forms.CheckBox chckenglishscholl;
         private System.Windows.Forms.Label lblotherlanguage;
         private System.Windows.Forms.TextBox txtlanguage;
+        private System.Windows.Forms.ComboBox cmbmanagement;
+        private System.Windows.Forms.GroupBox grpbxFamily;
+        private System.Windows.Forms.TextBox txtolder;
+        private System.Windows.Forms.TextBox txtmiddle;
+        private System.Windows.Forms.TextBox txtlittle;
+        private System.Windows.Forms.CheckBox chckbxolder;
+        private System.Windows.Forms.CheckBox chckbxmiddle;
+        private System.Windows.Forms.CheckBox chckbxlittle;
+        private System.Windows.Forms.RadioButton rbtnMarried;
+        private System.Windows.Forms.RadioButton rbtnSingle;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chckbxunemployedspouse;
     }
 }
 
