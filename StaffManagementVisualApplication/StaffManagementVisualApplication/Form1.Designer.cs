@@ -133,6 +133,7 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(100, 20);
             this.txtSalary.TabIndex = 7;
+            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             // 
             // lblname
             // 
@@ -203,6 +204,7 @@
             this.txtExperince.Name = "txtExperince";
             this.txtExperince.Size = new System.Drawing.Size(100, 20);
             this.txtExperince.TabIndex = 15;
+            this.txtExperince.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExperince_KeyPress);
             // 
             // cmbcity
             // 
@@ -356,6 +358,7 @@
             this.txtlanguage.Name = "txtlanguage";
             this.txtlanguage.Size = new System.Drawing.Size(19, 20);
             this.txtlanguage.TabIndex = 22;
+            this.txtlanguage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlanguage_KeyPress);
             // 
             // cmbmanagement
             // 
@@ -407,6 +410,7 @@
             this.txtolder.Size = new System.Drawing.Size(100, 20);
             this.txtolder.TabIndex = 7;
             this.txtolder.Visible = false;
+            this.txtolder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtolder_KeyPress);
             // 
             // txtmiddle
             // 
@@ -415,6 +419,7 @@
             this.txtmiddle.Size = new System.Drawing.Size(100, 20);
             this.txtmiddle.TabIndex = 6;
             this.txtmiddle.Visible = false;
+            this.txtmiddle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmiddle_KeyPress);
             // 
             // txtlittle
             // 
@@ -423,6 +428,7 @@
             this.txtlittle.Size = new System.Drawing.Size(100, 20);
             this.txtlittle.TabIndex = 5;
             this.txtlittle.Visible = false;
+            this.txtlittle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlittle_KeyPress);
             // 
             // chckbxolder
             // 
