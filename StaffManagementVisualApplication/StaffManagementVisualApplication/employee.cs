@@ -10,7 +10,7 @@ namespace StaffManagementVisualApplication
     {
         private int brüt_maas = 0;
         private int sehir;
-        private string id;
+        private int id;
         private string isim;
         private string soyisim;
         private string adres;
@@ -53,7 +53,7 @@ namespace StaffManagementVisualApplication
             }
         }
 
-        public string _id
+        public int _id
         {
             get
             {
