@@ -1,0 +1,9 @@
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\StaffManagementVisualApplication.exe.config
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\StaffManagementVisualApplication.exe
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\StaffManagementVisualApplication.pdb
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.csprojResolveAssemblyReference.cache
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.Form1.resources
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.Properties.Resources.resources
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.csproj.GenerateResource.Cache
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.exe
+C:\Users\white\Documents\Visual Studio 2015\Projects\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.pdb
