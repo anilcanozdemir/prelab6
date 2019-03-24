@@ -16,7 +16,7 @@ namespace StaffManagementVisualApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StaffManagementApplication());
+            Application.Run(new YonetimBirimiApplication());
         }
     }
 }

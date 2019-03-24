@@ -1,6 +1,6 @@
 ﻿namespace StaffManagementVisualApplication
 {
-    partial class StaffManagementApplication
+    partial class YonetimBirimiApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -28,189 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstbxStaffs = new System.Windows.Forms.ListBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtname = new System.Windows.Forms.TextBox();
-            this.txtSurname = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtSalary = new System.Windows.Forms.TextBox();
-            this.lblname = new System.Windows.Forms.Label();
-            this.lblsurname = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblsalary = new System.Windows.Forms.Label();
-            this.lblexp = new System.Windows.Forms.Label();
-            this.lblcity = new System.Windows.Forms.Label();
-            this.lbleducation = new System.Windows.Forms.Label();
-            this.txtExperince = new System.Windows.Forms.TextBox();
-            this.cmbcity = new System.Windows.Forms.ComboBox();
-            this.cmbeducation = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chckEnglish = new System.Windows.Forms.CheckBox();
-            this.chckenglishscholl = new System.Windows.Forms.CheckBox();
-            this.lblotherlanguage = new System.Windows.Forms.Label();
+            this.lstbxGoster = new System.Windows.Forms.ListBox();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.lblDegistir = new System.Windows.Forms.Button();
+            this.txtisim = new System.Windows.Forms.TextBox();
+            this.txtsoyisim = new System.Windows.Forms.TextBox();
+            this.txtadres = new System.Windows.Forms.TextBox();
+            this.txtmaas = new System.Windows.Forms.TextBox();
+            this.lblisim = new System.Windows.Forms.Label();
+            this.lblsoyisim = new System.Windows.Forms.Label();
+            this.lblAdres = new System.Windows.Forms.Label();
+            this.lblmaas = new System.Windows.Forms.Label();
+            this.lblTecrube = new System.Windows.Forms.Label();
+            this.lblsehir = new System.Windows.Forms.Label();
+            this.lblegitim = new System.Windows.Forms.Label();
+            this.txttecrube = new System.Windows.Forms.TextBox();
+            this.cmbsehir = new System.Windows.Forms.ComboBox();
+            this.cmbegitim = new System.Windows.Forms.ComboBox();
+            this.lbldilbilgisi = new System.Windows.Forms.Label();
+            this.chckingilizce = new System.Windows.Forms.CheckBox();
+            this.chckingilizceokul = new System.Windows.Forms.CheckBox();
+            this.lbldigerdil = new System.Windows.Forms.Label();
             this.txtlanguage = new System.Windows.Forms.TextBox();
-            this.cmbmanagement = new System.Windows.Forms.ComboBox();
-            this.grpbxFamily = new System.Windows.Forms.GroupBox();
-            this.chckbxunemployedspouse = new System.Windows.Forms.CheckBox();
-            this.txtolder = new System.Windows.Forms.TextBox();
-            this.txtmiddle = new System.Windows.Forms.TextBox();
-            this.txtlittle = new System.Windows.Forms.TextBox();
-            this.chckbxolder = new System.Windows.Forms.CheckBox();
-            this.chckbxmiddle = new System.Windows.Forms.CheckBox();
-            this.chckbxlittle = new System.Windows.Forms.CheckBox();
-            this.rbtnMarried = new System.Windows.Forms.RadioButton();
-            this.rbtnSingle = new System.Windows.Forms.RadioButton();
+            this.cmbyoneticilik = new System.Windows.Forms.ComboBox();
+            this.grpbxAile = new System.Windows.Forms.GroupBox();
+            this.chckbxesicalismiyor = new System.Windows.Forms.CheckBox();
+            this.txtbuyuk = new System.Windows.Forms.TextBox();
+            this.txtortanca = new System.Windows.Forms.TextBox();
+            this.txtkucuk = new System.Windows.Forms.TextBox();
+            this.chckbxbuyuk = new System.Windows.Forms.CheckBox();
+            this.chckbxortanca = new System.Windows.Forms.CheckBox();
+            this.chckbxkucuk = new System.Windows.Forms.CheckBox();
+            this.rbtnEvli = new System.Windows.Forms.RadioButton();
+            this.rbtnBekar = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lblbmo = new System.Windows.Forms.Label();
-            this.grpbxFamily.SuspendLayout();
+            this.grpbxAile.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstbxStaffs
+            // lstbxGoster
             // 
-            this.lstbxStaffs.FormattingEnabled = true;
-            this.lstbxStaffs.Location = new System.Drawing.Point(12, 12);
-            this.lstbxStaffs.Name = "lstbxStaffs";
-            this.lstbxStaffs.Size = new System.Drawing.Size(270, 264);
-            this.lstbxStaffs.TabIndex = 0;
-            this.lstbxStaffs.SelectedIndexChanged += new System.EventHandler(this.lstbxStaffs_SelectedIndexChanged);
+            this.lstbxGoster.FormattingEnabled = true;
+            this.lstbxGoster.Location = new System.Drawing.Point(12, 12);
+            this.lstbxGoster.Name = "lstbxGoster";
+            this.lstbxGoster.Size = new System.Drawing.Size(270, 264);
+            this.lstbxGoster.TabIndex = 0;
+            this.lstbxGoster.SelectedIndexChanged += new System.EventHandler(this.lstbxStaffs_SelectedIndexChanged);
             // 
-            // btnAdd
+            // btnEkle
             // 
-            this.btnAdd.Location = new System.Drawing.Point(434, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnEkle.Location = new System.Drawing.Point(434, 4);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.TabIndex = 1;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDelete
+            // btnSil
             // 
-            this.btnDelete.Location = new System.Drawing.Point(515, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnSil.Location = new System.Drawing.Point(515, 4);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 2;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnUpdate
+            // lblDegistir
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(596, 4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.lblDegistir.Location = new System.Drawing.Point(596, 4);
+            this.lblDegistir.Name = "lblDegistir";
+            this.lblDegistir.Size = new System.Drawing.Size(75, 23);
+            this.lblDegistir.TabIndex = 3;
+            this.lblDegistir.Text = "Degistir";
+            this.lblDegistir.UseVisualStyleBackColor = true;
+            this.lblDegistir.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // txtname
+            // txtisim
             // 
-            this.txtname.Location = new System.Drawing.Point(434, 33);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(100, 20);
-            this.txtname.TabIndex = 4;
+            this.txtisim.Location = new System.Drawing.Point(434, 33);
+            this.txtisim.Name = "txtisim";
+            this.txtisim.Size = new System.Drawing.Size(100, 20);
+            this.txtisim.TabIndex = 4;
             // 
-            // txtSurname
+            // txtsoyisim
             // 
-            this.txtSurname.Location = new System.Drawing.Point(434, 59);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(100, 20);
-            this.txtSurname.TabIndex = 5;
+            this.txtsoyisim.Location = new System.Drawing.Point(434, 59);
+            this.txtsoyisim.Name = "txtsoyisim";
+            this.txtsoyisim.Size = new System.Drawing.Size(100, 20);
+            this.txtsoyisim.TabIndex = 5;
             // 
-            // txtAddress
+            // txtadres
             // 
-            this.txtAddress.Location = new System.Drawing.Point(434, 85);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress.TabIndex = 6;
+            this.txtadres.Location = new System.Drawing.Point(434, 85);
+            this.txtadres.Name = "txtadres";
+            this.txtadres.Size = new System.Drawing.Size(100, 20);
+            this.txtadres.TabIndex = 6;
             // 
-            // txtSalary
+            // txtmaas
             // 
-            this.txtSalary.Location = new System.Drawing.Point(434, 111);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(100, 20);
-            this.txtSalary.TabIndex = 7;
-            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
+            this.txtmaas.Location = new System.Drawing.Point(434, 111);
+            this.txtmaas.Name = "txtmaas";
+            this.txtmaas.Size = new System.Drawing.Size(100, 20);
+            this.txtmaas.TabIndex = 7;
+            this.txtmaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             // 
-            // lblname
+            // lblisim
             // 
-            this.lblname.AutoSize = true;
-            this.lblname.Location = new System.Drawing.Point(378, 33);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(35, 13);
-            this.lblname.TabIndex = 8;
-            this.lblname.Text = "Name";
+            this.lblisim.AutoSize = true;
+            this.lblisim.Location = new System.Drawing.Point(378, 33);
+            this.lblisim.Name = "lblisim";
+            this.lblisim.Size = new System.Drawing.Size(25, 13);
+            this.lblisim.TabIndex = 8;
+            this.lblisim.Text = "İsim";
             // 
-            // lblsurname
+            // lblsoyisim
             // 
-            this.lblsurname.AutoSize = true;
-            this.lblsurname.Location = new System.Drawing.Point(346, 59);
-            this.lblsurname.Name = "lblsurname";
-            this.lblsurname.Size = new System.Drawing.Size(67, 13);
-            this.lblsurname.TabIndex = 9;
-            this.lblsurname.Text = "Family Name";
+            this.lblsoyisim.AutoSize = true;
+            this.lblsoyisim.Location = new System.Drawing.Point(361, 59);
+            this.lblsoyisim.Name = "lblsoyisim";
+            this.lblsoyisim.Size = new System.Drawing.Size(42, 13);
+            this.lblsoyisim.TabIndex = 9;
+            this.lblsoyisim.Text = "Soyisim";
             // 
-            // lblAddress
+            // lblAdres
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(368, 85);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(45, 13);
-            this.lblAddress.TabIndex = 10;
-            this.lblAddress.Text = "Address";
+            this.lblAdres.AutoSize = true;
+            this.lblAdres.Location = new System.Drawing.Point(370, 88);
+            this.lblAdres.Name = "lblAdres";
+            this.lblAdres.Size = new System.Drawing.Size(34, 13);
+            this.lblAdres.TabIndex = 10;
+            this.lblAdres.Text = "Adres";
             // 
-            // lblsalary
+            // lblmaas
             // 
-            this.lblsalary.AutoSize = true;
-            this.lblsalary.Location = new System.Drawing.Point(377, 111);
-            this.lblsalary.Name = "lblsalary";
-            this.lblsalary.Size = new System.Drawing.Size(36, 13);
-            this.lblsalary.TabIndex = 11;
-            this.lblsalary.Text = "Salary";
+            this.lblmaas.AutoSize = true;
+            this.lblmaas.Location = new System.Drawing.Point(370, 111);
+            this.lblmaas.Name = "lblmaas";
+            this.lblmaas.Size = new System.Drawing.Size(33, 13);
+            this.lblmaas.TabIndex = 11;
+            this.lblmaas.Text = "Maas";
             // 
-            // lblexp
+            // lblTecrube
             // 
-            this.lblexp.AutoSize = true;
-            this.lblexp.Location = new System.Drawing.Point(353, 137);
-            this.lblexp.Name = "lblexp";
-            this.lblexp.Size = new System.Drawing.Size(60, 13);
-            this.lblexp.TabIndex = 12;
-            this.lblexp.Text = "Experience";
+            this.lblTecrube.AutoSize = true;
+            this.lblTecrube.Location = new System.Drawing.Point(356, 137);
+            this.lblTecrube.Name = "lblTecrube";
+            this.lblTecrube.Size = new System.Drawing.Size(47, 13);
+            this.lblTecrube.TabIndex = 12;
+            this.lblTecrube.Text = "Tecrube";
             // 
-            // lblcity
+            // lblsehir
             // 
-            this.lblcity.AutoSize = true;
-            this.lblcity.Location = new System.Drawing.Point(377, 170);
-            this.lblcity.Name = "lblcity";
-            this.lblcity.Size = new System.Drawing.Size(24, 13);
-            this.lblcity.TabIndex = 13;
-            this.lblcity.Text = "City";
+            this.lblsehir.AutoSize = true;
+            this.lblsehir.Location = new System.Drawing.Point(373, 163);
+            this.lblsehir.Name = "lblsehir";
+            this.lblsehir.Size = new System.Drawing.Size(31, 13);
+            this.lblsehir.TabIndex = 13;
+            this.lblsehir.Text = "Sehir";
             // 
-            // lbleducation
+            // lblegitim
             // 
-            this.lbleducation.AutoSize = true;
-            this.lbleducation.Location = new System.Drawing.Point(359, 193);
-            this.lbleducation.Name = "lbleducation";
-            this.lbleducation.Size = new System.Drawing.Size(55, 13);
-            this.lbleducation.TabIndex = 14;
-            this.lbleducation.Text = "Education";
+            this.lblegitim.AutoSize = true;
+            this.lblegitim.Location = new System.Drawing.Point(368, 193);
+            this.lblegitim.Name = "lblegitim";
+            this.lblegitim.Size = new System.Drawing.Size(35, 13);
+            this.lblegitim.TabIndex = 14;
+            this.lblegitim.Text = "Egitim";
             // 
-            // txtExperince
+            // txttecrube
             // 
-            this.txtExperince.Location = new System.Drawing.Point(434, 137);
-            this.txtExperince.Name = "txtExperince";
-            this.txtExperince.Size = new System.Drawing.Size(100, 20);
-            this.txtExperince.TabIndex = 15;
-            this.txtExperince.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExperince_KeyPress);
+            this.txttecrube.Location = new System.Drawing.Point(434, 137);
+            this.txttecrube.Name = "txttecrube";
+            this.txttecrube.Size = new System.Drawing.Size(100, 20);
+            this.txttecrube.TabIndex = 15;
+            this.txttecrube.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExperince_KeyPress);
             // 
-            // cmbcity
+            // cmbsehir
             // 
-            this.cmbcity.DropDownWidth = 100;
-            this.cmbcity.FormattingEnabled = true;
-            this.cmbcity.Items.AddRange(new object[] {
+            this.cmbsehir.DropDownWidth = 100;
+            this.cmbsehir.FormattingEnabled = true;
+            this.cmbsehir.Items.AddRange(new object[] {
             "01 Adana",
             "02 Adıyaman",
             "03 Afyon",
@@ -292,65 +292,65 @@
             "79 Kilis",
             "80 Osmaniye",
             "81 Düzce"});
-            this.cmbcity.Location = new System.Drawing.Point(434, 163);
-            this.cmbcity.Name = "cmbcity";
-            this.cmbcity.Size = new System.Drawing.Size(100, 21);
-            this.cmbcity.TabIndex = 16;
+            this.cmbsehir.Location = new System.Drawing.Point(434, 163);
+            this.cmbsehir.Name = "cmbsehir";
+            this.cmbsehir.Size = new System.Drawing.Size(100, 21);
+            this.cmbsehir.TabIndex = 16;
             // 
-            // cmbeducation
+            // cmbegitim
             // 
-            this.cmbeducation.DropDownWidth = 245;
-            this.cmbeducation.FormattingEnabled = true;
-            this.cmbeducation.Items.AddRange(new object[] {
+            this.cmbegitim.DropDownWidth = 245;
+            this.cmbegitim.FormattingEnabled = true;
+            this.cmbegitim.Items.AddRange(new object[] {
             "Yok",
             "Meslek alanı ile ilgili yüksek lisans",
             "Meslek alanı ile ilgili doktora",
             "Meslek alanı ile ilgili doçentlik",
             "Meslek alanı ile ilgili olmayan yüksek lisans",
             "Meslek alanı ile ilgili olmayan doktora/doçentlik"});
-            this.cmbeducation.Location = new System.Drawing.Point(434, 193);
-            this.cmbeducation.Name = "cmbeducation";
-            this.cmbeducation.Size = new System.Drawing.Size(100, 21);
-            this.cmbeducation.TabIndex = 17;
+            this.cmbegitim.Location = new System.Drawing.Point(434, 193);
+            this.cmbegitim.Name = "cmbegitim";
+            this.cmbegitim.Size = new System.Drawing.Size(100, 21);
+            this.cmbegitim.TabIndex = 17;
             // 
-            // label1
+            // lbldilbilgisi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(324, 238);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Yabancı Dil Bilgisi";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbldilbilgisi.AutoSize = true;
+            this.lbldilbilgisi.Location = new System.Drawing.Point(324, 238);
+            this.lbldilbilgisi.Name = "lbldilbilgisi";
+            this.lbldilbilgisi.Size = new System.Drawing.Size(90, 13);
+            this.lbldilbilgisi.TabIndex = 18;
+            this.lbldilbilgisi.Text = "Yabancı Dil Bilgisi";
+            this.lbldilbilgisi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chckEnglish
+            // chckingilizce
             // 
-            this.chckEnglish.AutoSize = true;
-            this.chckEnglish.Location = new System.Drawing.Point(382, 259);
-            this.chckEnglish.Name = "chckEnglish";
-            this.chckEnglish.Size = new System.Drawing.Size(152, 17);
-            this.chckEnglish.TabIndex = 19;
-            this.chckEnglish.Text = "Belgelenmiş İngilizce Bilgisi";
-            this.chckEnglish.UseVisualStyleBackColor = true;
+            this.chckingilizce.AutoSize = true;
+            this.chckingilizce.Location = new System.Drawing.Point(382, 259);
+            this.chckingilizce.Name = "chckingilizce";
+            this.chckingilizce.Size = new System.Drawing.Size(152, 17);
+            this.chckingilizce.TabIndex = 19;
+            this.chckingilizce.Text = "Belgelenmiş İngilizce Bilgisi";
+            this.chckingilizce.UseVisualStyleBackColor = true;
             // 
-            // chckenglishscholl
+            // chckingilizceokul
             // 
-            this.chckenglishscholl.AutoSize = true;
-            this.chckenglishscholl.Location = new System.Drawing.Point(382, 282);
-            this.chckenglishscholl.Name = "chckenglishscholl";
-            this.chckenglishscholl.Size = new System.Drawing.Size(204, 17);
-            this.chckenglishscholl.TabIndex = 20;
-            this.chckenglishscholl.Text = "İngilizce Eğitim Veren Okul Mezuniyeti";
-            this.chckenglishscholl.UseVisualStyleBackColor = true;
+            this.chckingilizceokul.AutoSize = true;
+            this.chckingilizceokul.Location = new System.Drawing.Point(382, 282);
+            this.chckingilizceokul.Name = "chckingilizceokul";
+            this.chckingilizceokul.Size = new System.Drawing.Size(204, 17);
+            this.chckingilizceokul.TabIndex = 20;
+            this.chckingilizceokul.Text = "İngilizce Eğitim Veren Okul Mezuniyeti";
+            this.chckingilizceokul.UseVisualStyleBackColor = true;
             // 
-            // lblotherlanguage
+            // lbldigerdil
             // 
-            this.lblotherlanguage.AutoSize = true;
-            this.lblotherlanguage.Location = new System.Drawing.Point(346, 305);
-            this.lblotherlanguage.Name = "lblotherlanguage";
-            this.lblotherlanguage.Size = new System.Drawing.Size(136, 13);
-            this.lblotherlanguage.TabIndex = 21;
-            this.lblotherlanguage.Text = "Diğer Belgelenmiş Dil Sayısı";
+            this.lbldigerdil.AutoSize = true;
+            this.lbldigerdil.Location = new System.Drawing.Point(346, 305);
+            this.lbldigerdil.Name = "lbldigerdil";
+            this.lbldigerdil.Size = new System.Drawing.Size(136, 13);
+            this.lbldigerdil.TabIndex = 21;
+            this.lbldigerdil.Text = "Diğer Belgelenmiş Dil Sayısı";
             // 
             // txtlanguage
             // 
@@ -360,11 +360,11 @@
             this.txtlanguage.TabIndex = 22;
             this.txtlanguage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlanguage_KeyPress);
             // 
-            // cmbmanagement
+            // cmbyoneticilik
             // 
-            this.cmbmanagement.DropDownWidth = 300;
-            this.cmbmanagement.FormattingEnabled = true;
-            this.cmbmanagement.Items.AddRange(new object[] {
+            this.cmbyoneticilik.DropDownWidth = 300;
+            this.cmbyoneticilik.FormattingEnabled = true;
+            this.cmbyoneticilik.Items.AddRange(new object[] {
             "Yok",
             "Takım Lideri/Grup Yöneticisi/Teknik Yönetici/Yazılım Mimarı",
             "Proje Yöneticisi",
@@ -372,119 +372,119 @@
             "CTO/Genel Müdür",
             "Bilgi İşlem Sorumlusu/Müdürü(0-5 personel)",
             "Bilgi İşlem Sorumlusu/Müdürü(5+personel)"});
-            this.cmbmanagement.Location = new System.Drawing.Point(598, 33);
-            this.cmbmanagement.Name = "cmbmanagement";
-            this.cmbmanagement.Size = new System.Drawing.Size(99, 21);
-            this.cmbmanagement.TabIndex = 23;
+            this.cmbyoneticilik.Location = new System.Drawing.Point(598, 33);
+            this.cmbyoneticilik.Name = "cmbyoneticilik";
+            this.cmbyoneticilik.Size = new System.Drawing.Size(99, 21);
+            this.cmbyoneticilik.TabIndex = 23;
             // 
-            // grpbxFamily
+            // grpbxAile
             // 
-            this.grpbxFamily.Controls.Add(this.chckbxunemployedspouse);
-            this.grpbxFamily.Controls.Add(this.txtolder);
-            this.grpbxFamily.Controls.Add(this.txtmiddle);
-            this.grpbxFamily.Controls.Add(this.txtlittle);
-            this.grpbxFamily.Controls.Add(this.chckbxolder);
-            this.grpbxFamily.Controls.Add(this.chckbxmiddle);
-            this.grpbxFamily.Controls.Add(this.chckbxlittle);
-            this.grpbxFamily.Location = new System.Drawing.Point(540, 94);
-            this.grpbxFamily.Name = "grpbxFamily";
-            this.grpbxFamily.Size = new System.Drawing.Size(285, 157);
-            this.grpbxFamily.TabIndex = 25;
-            this.grpbxFamily.TabStop = false;
-            this.grpbxFamily.Visible = false;
+            this.grpbxAile.Controls.Add(this.chckbxesicalismiyor);
+            this.grpbxAile.Controls.Add(this.txtbuyuk);
+            this.grpbxAile.Controls.Add(this.txtortanca);
+            this.grpbxAile.Controls.Add(this.txtkucuk);
+            this.grpbxAile.Controls.Add(this.chckbxbuyuk);
+            this.grpbxAile.Controls.Add(this.chckbxortanca);
+            this.grpbxAile.Controls.Add(this.chckbxkucuk);
+            this.grpbxAile.Location = new System.Drawing.Point(540, 94);
+            this.grpbxAile.Name = "grpbxAile";
+            this.grpbxAile.Size = new System.Drawing.Size(285, 157);
+            this.grpbxAile.TabIndex = 25;
+            this.grpbxAile.TabStop = false;
+            this.grpbxAile.Visible = false;
             // 
-            // chckbxunemployedspouse
+            // chckbxesicalismiyor
             // 
-            this.chckbxunemployedspouse.AutoSize = true;
-            this.chckbxunemployedspouse.Location = new System.Drawing.Point(6, 101);
-            this.chckbxunemployedspouse.Name = "chckbxunemployedspouse";
-            this.chckbxunemployedspouse.Size = new System.Drawing.Size(88, 17);
-            this.chckbxunemployedspouse.TabIndex = 8;
-            this.chckbxunemployedspouse.Text = "Eşi çalışmıyor";
-            this.chckbxunemployedspouse.UseVisualStyleBackColor = true;
+            this.chckbxesicalismiyor.AutoSize = true;
+            this.chckbxesicalismiyor.Location = new System.Drawing.Point(6, 101);
+            this.chckbxesicalismiyor.Name = "chckbxesicalismiyor";
+            this.chckbxesicalismiyor.Size = new System.Drawing.Size(88, 17);
+            this.chckbxesicalismiyor.TabIndex = 8;
+            this.chckbxesicalismiyor.Text = "Eşi çalışmıyor";
+            this.chckbxesicalismiyor.UseVisualStyleBackColor = true;
             // 
-            // txtolder
+            // txtbuyuk
             // 
-            this.txtolder.Location = new System.Drawing.Point(163, 76);
-            this.txtolder.Name = "txtolder";
-            this.txtolder.Size = new System.Drawing.Size(100, 20);
-            this.txtolder.TabIndex = 7;
-            this.txtolder.Visible = false;
-            this.txtolder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtolder_KeyPress);
+            this.txtbuyuk.Location = new System.Drawing.Point(163, 76);
+            this.txtbuyuk.Name = "txtbuyuk";
+            this.txtbuyuk.Size = new System.Drawing.Size(100, 20);
+            this.txtbuyuk.TabIndex = 7;
+            this.txtbuyuk.Visible = false;
+            this.txtbuyuk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtolder_KeyPress);
             // 
-            // txtmiddle
+            // txtortanca
             // 
-            this.txtmiddle.Location = new System.Drawing.Point(163, 49);
-            this.txtmiddle.Name = "txtmiddle";
-            this.txtmiddle.Size = new System.Drawing.Size(100, 20);
-            this.txtmiddle.TabIndex = 6;
-            this.txtmiddle.Visible = false;
-            this.txtmiddle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmiddle_KeyPress);
+            this.txtortanca.Location = new System.Drawing.Point(163, 49);
+            this.txtortanca.Name = "txtortanca";
+            this.txtortanca.Size = new System.Drawing.Size(100, 20);
+            this.txtortanca.TabIndex = 6;
+            this.txtortanca.Visible = false;
+            this.txtortanca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmiddle_KeyPress);
             // 
-            // txtlittle
+            // txtkucuk
             // 
-            this.txtlittle.Location = new System.Drawing.Point(163, 23);
-            this.txtlittle.Name = "txtlittle";
-            this.txtlittle.Size = new System.Drawing.Size(100, 20);
-            this.txtlittle.TabIndex = 5;
-            this.txtlittle.Visible = false;
-            this.txtlittle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlittle_KeyPress);
+            this.txtkucuk.Location = new System.Drawing.Point(163, 23);
+            this.txtkucuk.Name = "txtkucuk";
+            this.txtkucuk.Size = new System.Drawing.Size(100, 20);
+            this.txtkucuk.TabIndex = 5;
+            this.txtkucuk.Visible = false;
+            this.txtkucuk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlittle_KeyPress);
             // 
-            // chckbxolder
+            // chckbxbuyuk
             // 
-            this.chckbxolder.AutoSize = true;
-            this.chckbxolder.Location = new System.Drawing.Point(6, 76);
-            this.chckbxolder.Name = "chckbxolder";
-            this.chckbxolder.Size = new System.Drawing.Size(151, 17);
-            this.chckbxolder.TabIndex = 4;
-            this.chckbxolder.Text = "18 yaş üstü öğrenci çocuk";
-            this.chckbxolder.UseVisualStyleBackColor = true;
-            this.chckbxolder.CheckedChanged += new System.EventHandler(this.chckbxolder_CheckedChanged);
+            this.chckbxbuyuk.AutoSize = true;
+            this.chckbxbuyuk.Location = new System.Drawing.Point(6, 76);
+            this.chckbxbuyuk.Name = "chckbxbuyuk";
+            this.chckbxbuyuk.Size = new System.Drawing.Size(151, 17);
+            this.chckbxbuyuk.TabIndex = 4;
+            this.chckbxbuyuk.Text = "18 yaş üstü öğrenci çocuk";
+            this.chckbxbuyuk.UseVisualStyleBackColor = true;
+            this.chckbxbuyuk.CheckedChanged += new System.EventHandler(this.chckbxolder_CheckedChanged);
             // 
-            // chckbxmiddle
+            // chckbxortanca
             // 
-            this.chckbxmiddle.AutoSize = true;
-            this.chckbxmiddle.Location = new System.Drawing.Point(6, 49);
-            this.chckbxmiddle.Name = "chckbxmiddle";
-            this.chckbxmiddle.Size = new System.Drawing.Size(124, 17);
-            this.chckbxmiddle.TabIndex = 3;
-            this.chckbxmiddle.Text = "7-18 yaş arası çocuk";
-            this.chckbxmiddle.UseVisualStyleBackColor = true;
-            this.chckbxmiddle.CheckedChanged += new System.EventHandler(this.chckmiddle_CheckedChanged);
+            this.chckbxortanca.AutoSize = true;
+            this.chckbxortanca.Location = new System.Drawing.Point(6, 49);
+            this.chckbxortanca.Name = "chckbxortanca";
+            this.chckbxortanca.Size = new System.Drawing.Size(124, 17);
+            this.chckbxortanca.TabIndex = 3;
+            this.chckbxortanca.Text = "7-18 yaş arası çocuk";
+            this.chckbxortanca.UseVisualStyleBackColor = true;
+            this.chckbxortanca.CheckedChanged += new System.EventHandler(this.chckmiddle_CheckedChanged);
             // 
-            // chckbxlittle
+            // chckbxkucuk
             // 
-            this.chckbxlittle.AutoSize = true;
-            this.chckbxlittle.Location = new System.Drawing.Point(6, 20);
-            this.chckbxlittle.Name = "chckbxlittle";
-            this.chckbxlittle.Size = new System.Drawing.Size(118, 17);
-            this.chckbxlittle.TabIndex = 2;
-            this.chckbxlittle.Text = "0-6 yaş arası çocuk";
-            this.chckbxlittle.UseVisualStyleBackColor = true;
-            this.chckbxlittle.CheckedChanged += new System.EventHandler(this.chckbxlittle_CheckedChanged);
+            this.chckbxkucuk.AutoSize = true;
+            this.chckbxkucuk.Location = new System.Drawing.Point(6, 20);
+            this.chckbxkucuk.Name = "chckbxkucuk";
+            this.chckbxkucuk.Size = new System.Drawing.Size(118, 17);
+            this.chckbxkucuk.TabIndex = 2;
+            this.chckbxkucuk.Text = "0-6 yaş arası çocuk";
+            this.chckbxkucuk.UseVisualStyleBackColor = true;
+            this.chckbxkucuk.CheckedChanged += new System.EventHandler(this.chckbxlittle_CheckedChanged);
             // 
-            // rbtnMarried
+            // rbtnEvli
             // 
-            this.rbtnMarried.AutoSize = true;
-            this.rbtnMarried.Location = new System.Drawing.Point(562, 71);
-            this.rbtnMarried.Name = "rbtnMarried";
-            this.rbtnMarried.Size = new System.Drawing.Size(42, 17);
-            this.rbtnMarried.TabIndex = 0;
-            this.rbtnMarried.Text = "Evli";
-            this.rbtnMarried.UseVisualStyleBackColor = true;
-            this.rbtnMarried.CheckedChanged += new System.EventHandler(this.rbtnMarried_CheckedChanged);
+            this.rbtnEvli.AutoSize = true;
+            this.rbtnEvli.Location = new System.Drawing.Point(562, 71);
+            this.rbtnEvli.Name = "rbtnEvli";
+            this.rbtnEvli.Size = new System.Drawing.Size(42, 17);
+            this.rbtnEvli.TabIndex = 0;
+            this.rbtnEvli.Text = "Evli";
+            this.rbtnEvli.UseVisualStyleBackColor = true;
+            this.rbtnEvli.CheckedChanged += new System.EventHandler(this.rbtnMarried_CheckedChanged);
             // 
-            // rbtnSingle
+            // rbtnBekar
             // 
-            this.rbtnSingle.AutoSize = true;
-            this.rbtnSingle.Checked = true;
-            this.rbtnSingle.Location = new System.Drawing.Point(628, 71);
-            this.rbtnSingle.Name = "rbtnSingle";
-            this.rbtnSingle.Size = new System.Drawing.Size(53, 17);
-            this.rbtnSingle.TabIndex = 1;
-            this.rbtnSingle.TabStop = true;
-            this.rbtnSingle.Text = "Bekar";
-            this.rbtnSingle.UseVisualStyleBackColor = true;
+            this.rbtnBekar.AutoSize = true;
+            this.rbtnBekar.Checked = true;
+            this.rbtnBekar.Location = new System.Drawing.Point(628, 71);
+            this.rbtnBekar.Name = "rbtnBekar";
+            this.rbtnBekar.Size = new System.Drawing.Size(53, 17);
+            this.rbtnBekar.TabIndex = 1;
+            this.rbtnBekar.TabStop = true;
+            this.rbtnBekar.Text = "Bekar";
+            this.rbtnBekar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -504,45 +504,45 @@
             this.lblbmo.TabIndex = 27;
             this.lblbmo.Text = "BMO:";
             // 
-            // StaffManagementApplication
+            // YonetimBirimiApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 496);
             this.Controls.Add(this.lblbmo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.grpbxFamily);
-            this.Controls.Add(this.cmbmanagement);
-            this.Controls.Add(this.rbtnMarried);
-            this.Controls.Add(this.rbtnSingle);
+            this.Controls.Add(this.grpbxAile);
+            this.Controls.Add(this.cmbyoneticilik);
+            this.Controls.Add(this.rbtnEvli);
+            this.Controls.Add(this.rbtnBekar);
             this.Controls.Add(this.txtlanguage);
-            this.Controls.Add(this.lblotherlanguage);
-            this.Controls.Add(this.chckenglishscholl);
-            this.Controls.Add(this.chckEnglish);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbeducation);
-            this.Controls.Add(this.cmbcity);
-            this.Controls.Add(this.txtExperince);
-            this.Controls.Add(this.lbleducation);
-            this.Controls.Add(this.lblcity);
-            this.Controls.Add(this.lblexp);
-            this.Controls.Add(this.lblsalary);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblsurname);
-            this.Controls.Add(this.lblname);
-            this.Controls.Add(this.txtSalary);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.txtname);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lstbxStaffs);
-            this.Name = "StaffManagementApplication";
-            this.Text = "StaffManagementApplication";
+            this.Controls.Add(this.lbldigerdil);
+            this.Controls.Add(this.chckingilizceokul);
+            this.Controls.Add(this.chckingilizce);
+            this.Controls.Add(this.lbldilbilgisi);
+            this.Controls.Add(this.cmbegitim);
+            this.Controls.Add(this.cmbsehir);
+            this.Controls.Add(this.txttecrube);
+            this.Controls.Add(this.lblegitim);
+            this.Controls.Add(this.lblsehir);
+            this.Controls.Add(this.lblTecrube);
+            this.Controls.Add(this.lblmaas);
+            this.Controls.Add(this.lblAdres);
+            this.Controls.Add(this.lblsoyisim);
+            this.Controls.Add(this.lblisim);
+            this.Controls.Add(this.txtmaas);
+            this.Controls.Add(this.txtadres);
+            this.Controls.Add(this.txtsoyisim);
+            this.Controls.Add(this.txtisim);
+            this.Controls.Add(this.lblDegistir);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnEkle);
+            this.Controls.Add(this.lstbxGoster);
+            this.Name = "YonetimBirimiApplication";
+            this.Text = "YonetimBirimi";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.grpbxFamily.ResumeLayout(false);
-            this.grpbxFamily.PerformLayout();
+            this.grpbxAile.ResumeLayout(false);
+            this.grpbxAile.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,41 +550,41 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstbxStaffs;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.Label lblname;
-        private System.Windows.Forms.Label lblsurname;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblsalary;
-        private System.Windows.Forms.Label lblexp;
-        private System.Windows.Forms.Label lblcity;
-        private System.Windows.Forms.Label lbleducation;
-        private System.Windows.Forms.TextBox txtExperince;
-        private System.Windows.Forms.ComboBox cmbcity;
-        private System.Windows.Forms.ComboBox cmbeducation;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chckEnglish;
-        private System.Windows.Forms.CheckBox chckenglishscholl;
-        private System.Windows.Forms.Label lblotherlanguage;
+        private System.Windows.Forms.ListBox lstbxGoster;
+        private System.Windows.Forms.Button btnEkle;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button lblDegistir;
+        private System.Windows.Forms.TextBox txtisim;
+        private System.Windows.Forms.TextBox txtsoyisim;
+        private System.Windows.Forms.TextBox txtadres;
+        private System.Windows.Forms.TextBox txtmaas;
+        private System.Windows.Forms.Label lblisim;
+        private System.Windows.Forms.Label lblsoyisim;
+        private System.Windows.Forms.Label lblAdres;
+        private System.Windows.Forms.Label lblmaas;
+        private System.Windows.Forms.Label lblTecrube;
+        private System.Windows.Forms.Label lblsehir;
+        private System.Windows.Forms.Label lblegitim;
+        private System.Windows.Forms.TextBox txttecrube;
+        private System.Windows.Forms.ComboBox cmbsehir;
+        private System.Windows.Forms.ComboBox cmbegitim;
+        private System.Windows.Forms.Label lbldilbilgisi;
+        private System.Windows.Forms.CheckBox chckingilizce;
+        private System.Windows.Forms.CheckBox chckingilizceokul;
+        private System.Windows.Forms.Label lbldigerdil;
         private System.Windows.Forms.TextBox txtlanguage;
-        private System.Windows.Forms.ComboBox cmbmanagement;
-        private System.Windows.Forms.GroupBox grpbxFamily;
-        private System.Windows.Forms.TextBox txtolder;
-        private System.Windows.Forms.TextBox txtmiddle;
-        private System.Windows.Forms.TextBox txtlittle;
-        private System.Windows.Forms.CheckBox chckbxolder;
-        private System.Windows.Forms.CheckBox chckbxmiddle;
-        private System.Windows.Forms.CheckBox chckbxlittle;
-        private System.Windows.Forms.RadioButton rbtnMarried;
-        private System.Windows.Forms.RadioButton rbtnSingle;
+        private System.Windows.Forms.ComboBox cmbyoneticilik;
+        private System.Windows.Forms.GroupBox grpbxAile;
+        private System.Windows.Forms.TextBox txtbuyuk;
+        private System.Windows.Forms.TextBox txtortanca;
+        private System.Windows.Forms.TextBox txtkucuk;
+        private System.Windows.Forms.CheckBox chckbxbuyuk;
+        private System.Windows.Forms.CheckBox chckbxortanca;
+        private System.Windows.Forms.CheckBox chckbxkucuk;
+        private System.Windows.Forms.RadioButton rbtnEvli;
+        private System.Windows.Forms.RadioButton rbtnBekar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chckbxunemployedspouse;
+        private System.Windows.Forms.CheckBox chckbxesicalismiyor;
         private System.Windows.Forms.Label lblbmo;
     }
 }
