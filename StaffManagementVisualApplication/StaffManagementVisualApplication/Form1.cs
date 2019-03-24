@@ -15,7 +15,8 @@ namespace StaffManagementVisualApplication
         public StaffManagementApplication()
         {
             InitializeComponent();
-        }
+            
+            }
 
 
         private void rbtnMarried_CheckedChanged(object sender, EventArgs e)
@@ -72,6 +73,46 @@ namespace StaffManagementVisualApplication
         {
             rbtnMarried.Checked = false;
             rbtnSingle.Checked = true;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtname.Text != "" && txtSurname.Text != "" && txtAddress.Text != "" && txtSalary.Text != "" && cmbcity.SelectedItem!= null && cmbeducation.SelectedItem!=null&&cmbmanagement.SelectedItem!=null)
+            {
+                
+                employee yeni = new employee();
+                yeni._isim = txtname.Text;
+                yeni._soyisim = txtSurname.Text;
+                yeni._adres = txtAddress.Text;
+                yeni._maas = Convert.ToInt32(txtSalary.Text);
+                if(txtExperince.Text!=null)
+                yeni._tecrube = Convert.ToInt32(txtExperince.Text);
+                yeni._sehir = cmbcity.SelectedIndex;
+                yeni._ogrenim_seviyesi = cmbeducation.SelectedIndex;
+                yeni._yoneticilik_gorevi = cmbmanagement.SelectedIndex;
+                yeni._belge_ingilizce = chckEnglish.Checked;
+                yeni._okul_ingilizce = chckenglishscholl.Checked;
+                if(txtlanguage.Text!=null)
+                yeni._yabanci_dil_sayisi = Convert.ToInt32(txtlanguage.Text);
+                yeni._evli_mi = rbtnMarried.Checked;
+                yeni._esi_calisiyomu = chckbxunemployedspouse.Checked;
+                if(chckbxlittle.Checked)
+                {
+                    yeni._kucuk_cocuk = Convert.ToInt32(txtlittle.Text);
+                }
+                if (chckbxmiddle.Checked)
+                {
+                    yeni._kucuk_cocuk = Convert.ToInt32(txtmiddle.Text);
+                }
+                if (chckbxolder.Checked)
+                {
+                    yeni._kucuk_cocuk = Convert.ToInt32(txtolder.Text);
+                }
+                lstbxStaffs.Items.Add(yeni);
+               
+
+            }
+
         }
     }
 }

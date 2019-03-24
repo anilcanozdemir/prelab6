@@ -53,6 +53,7 @@
             this.txtlanguage = new System.Windows.Forms.TextBox();
             this.cmbmanagement = new System.Windows.Forms.ComboBox();
             this.grpbxFamily = new System.Windows.Forms.GroupBox();
+            this.chckbxunemployedspouse = new System.Windows.Forms.CheckBox();
             this.txtolder = new System.Windows.Forms.TextBox();
             this.txtmiddle = new System.Windows.Forms.TextBox();
             this.txtlittle = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@
             this.rbtnMarried = new System.Windows.Forms.RadioButton();
             this.rbtnSingle = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.chckbxunemployedspouse = new System.Windows.Forms.CheckBox();
             this.grpbxFamily.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -295,6 +296,7 @@
             this.cmbeducation.DropDownWidth = 245;
             this.cmbeducation.FormattingEnabled = true;
             this.cmbeducation.Items.AddRange(new object[] {
+            "Yok",
             "Meslek alanı ile ilgili yüksek lisans",
             "Meslek alanı ile ilgili doktora",
             "Meslek alanı ile ilgili doçentlik",
@@ -384,6 +386,16 @@
             this.grpbxFamily.TabStop = false;
             this.grpbxFamily.Visible = false;
             // 
+            // chckbxunemployedspouse
+            // 
+            this.chckbxunemployedspouse.AutoSize = true;
+            this.chckbxunemployedspouse.Location = new System.Drawing.Point(6, 101);
+            this.chckbxunemployedspouse.Name = "chckbxunemployedspouse";
+            this.chckbxunemployedspouse.Size = new System.Drawing.Size(88, 17);
+            this.chckbxunemployedspouse.TabIndex = 8;
+            this.chckbxunemployedspouse.Text = "Eşi çalışmıyor";
+            this.chckbxunemployedspouse.UseVisualStyleBackColor = true;
+            // 
             // txtolder
             // 
             this.txtolder.Location = new System.Drawing.Point(163, 76);
@@ -472,16 +484,6 @@
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Yöneticilik";
-            // 
-            // chckbxunemployedspouse
-            // 
-            this.chckbxunemployedspouse.AutoSize = true;
-            this.chckbxunemployedspouse.Location = new System.Drawing.Point(6, 101);
-            this.chckbxunemployedspouse.Name = "chckbxunemployedspouse";
-            this.chckbxunemployedspouse.Size = new System.Drawing.Size(88, 17);
-            this.chckbxunemployedspouse.TabIndex = 8;
-            this.chckbxunemployedspouse.Text = "Eşi çalışmıyor";
-            this.chckbxunemployedspouse.UseVisualStyleBackColor = true;
             // 
             // StaffManagementApplication
             // 
