@@ -8,7 +8,7 @@ namespace StaffManagementVisualApplication
 {
     class employee
     {
-        private int brüt_maas = 0;
+        
         private int sehir;
         private int id;
         private string isim;
