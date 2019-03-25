@@ -300,7 +300,7 @@ namespace StaffManagementVisualApplication
                         if (S._ortanca_cocuk > 0)
                             chckbxortanca.Checked = true;
                         if (S._ortanca_cocuk == 0)
-                            chckbxkucuk.Checked = false;
+                            chckbxortanca.Checked = false;
                         if (S._buyuk_cocuk > 0)
                             chckbxbuyuk.Checked = true;
                         if (S._buyuk_cocuk == 0)
