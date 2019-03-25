@@ -74,7 +74,7 @@ namespace StaffManagementVisualApplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (var reader = new StreamReader(@"C: \Users\white\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv", Encoding.GetEncoding("iso-8859-9"), false))
+            using (var reader = new StreamReader(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv", Encoding.GetEncoding("iso-8859-9"), false))
             {
                 while (!reader.EndOfStream)
                 {
@@ -146,12 +146,12 @@ namespace StaffManagementVisualApplication
                 lstbxGoster.Items.Add(yeni._id + " " + yeni._isim + " " + yeni._soyisim);
                 employees.Add(yeni);
 
-                lblbmo.Text = yeni.bmo().ToString();
+                lblbmo.Text = "BMO: " + yeni.bmo().ToString();
 
 
 
             }
-            StreamWriter myOutputStream = new StreamWriter(@"C: \Users\white\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
+            StreamWriter myOutputStream = new StreamWriter(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
             foreach (employee S in employees)
             {
                 myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
@@ -173,7 +173,7 @@ namespace StaffManagementVisualApplication
 
 
             }
-            StreamWriter myOutputStream = new StreamWriter(@"C: \Users\white\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
+            StreamWriter myOutputStream = new StreamWriter(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
             foreach (employee S in employees)
             {
                 myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
@@ -211,25 +211,43 @@ namespace StaffManagementVisualApplication
                         {
                             S._kucuk_cocuk = Convert.ToInt32(txtkucuk.Text);
                         }
+
+                        if (rbtnBekar.Checked)
+                        {
+                            S._kucuk_cocuk = 0;
+                            chckbxkucuk.Checked = false;
+                            txtkucuk.Text = "";
+                            txtbuyuk.Text = "";
+                            txtortanca.Text = "";
+                            S._ortanca_cocuk = 0;
+                            chckbxortanca.Checked = false;
+                            S._buyuk_cocuk = 0;
+                            chckbxkucuk.Checked = false;
+                            chckbxesicalismiyor.Checked = false;
+                        }
+
+                        
                         if (chckbxortanca.Checked)
                         {
                             S._ortanca_cocuk = Convert.ToInt32(txtortanca.Text);
                         }
+                        
                         if (chckbxbuyuk.Checked)
                         {
                             S._buyuk_cocuk = Convert.ToInt32(txtbuyuk.Text);
                         }
+                        
                         string guncel = "";
                         guncel += S._id + " " + S._isim + " " + S._soyisim;
 
                         lstbxGoster.Items.Insert(S._id - 1, guncel);
                         lstbxGoster.Items.RemoveAt(S._id);
-                        lblbmo.Text = S.bmo().ToString();
+                        lblbmo.Text = "BMO: " + S.bmo().ToString();
 
                     }
                 }
             }
-            StreamWriter myOutputStream = new StreamWriter(@"C: \Users\white\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
+            StreamWriter myOutputStream = new StreamWriter(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
             foreach (employee S in employees)
             {
                 myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
@@ -261,14 +279,20 @@ namespace StaffManagementVisualApplication
                         cmbyoneticilik.SelectedIndex = S._yoneticilik_gorevi;
                         if (S._okul_ingilizce == true)
                             chckingilizceokul.Checked = true;
+                        if (S._okul_ingilizce == false)
+                            chckingilizceokul.Checked = false;
                         if (S._belge_ingilizce == true)
                             chckingilizce.Checked = true;
+                        if (S._belge_ingilizce == false)
+                            chckingilizce.Checked = false;
                         if (S._evli_mi == true)
                             rbtnEvli.Checked = true;
                         if (S._evli_mi == false)
                             rbtnBekar.Checked = true;
                         if (S._esi_calismiyomu == true)
                             chckbxesicalismiyor.Checked = true;
+                        if (S._esi_calismiyomu == false)
+                            chckbxesicalismiyor.Checked = false;
                         if (S._kucuk_cocuk > 0)
                             chckbxkucuk.Checked = true;
                         if (S._kucuk_cocuk == 0)
@@ -281,7 +305,7 @@ namespace StaffManagementVisualApplication
                             chckbxbuyuk.Checked = true;
                         if (S._buyuk_cocuk == 0)
                             chckbxbuyuk.Checked = false;
-                        lblbmo.Text = S.bmo().ToString();
+                        lblbmo.Text ="BMO: "+ S.bmo().ToString();
                     }
                 }
             }
