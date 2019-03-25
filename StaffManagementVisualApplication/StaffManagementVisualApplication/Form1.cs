@@ -74,7 +74,7 @@ namespace StaffManagementVisualApplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (var reader = new StreamReader(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv", Encoding.GetEncoding("iso-8859-9"), false))
+            using (var reader = new StreamReader("staff.csv", Encoding.GetEncoding("iso-8859-9"), false))
             {
                 while (!reader.EndOfStream)
                 {
@@ -151,7 +151,7 @@ namespace StaffManagementVisualApplication
 
 
             }
-            StreamWriter myOutputStream = new StreamWriter(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
+            StreamWriter myOutputStream = new StreamWriter("staff.csv");
             foreach (employee S in employees)
             {
                 myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
@@ -173,7 +173,7 @@ namespace StaffManagementVisualApplication
 
 
             }
-            StreamWriter myOutputStream = new StreamWriter(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
+            StreamWriter myOutputStream = new StreamWriter("staff.csv");
             foreach (employee S in employees)
             {
                 myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
@@ -247,7 +247,7 @@ namespace StaffManagementVisualApplication
                     }
                 }
             }
-            StreamWriter myOutputStream = new StreamWriter(@"C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\staff.csv");
+            StreamWriter myOutputStream = new StreamWriter("staff.csv");
             foreach (employee S in employees)
             {
                 myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
