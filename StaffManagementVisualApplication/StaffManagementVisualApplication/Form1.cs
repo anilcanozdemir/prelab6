@@ -14,7 +14,6 @@ namespace StaffManagementVisualApplication
     public partial class YonetimBirimiApplication : Form
     {
         List<employee> employees = new List<employee>();
-        int employeecount = 0;
         public YonetimBirimiApplication()
         {
             InitializeComponent();
@@ -102,7 +101,7 @@ namespace StaffManagementVisualApplication
 
                     employees.Add(yeni);
                     lstbxGoster.Items.Add(yeni._id + " " + yeni._isim + " " + yeni._soyisim);
-                    employeecount = yeni._id;
+                    employee.Counter = yeni._id;
                 }
             }
         }   
@@ -110,39 +109,11 @@ namespace StaffManagementVisualApplication
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (txtisim.Text != "" && txtsoyisim.Text != "" && txtadres.Text != "" && txtmaas.Text != "" && cmbsehir.SelectedItem != null && cmbegitim.SelectedItem != null && cmbyoneticilik.SelectedItem != null)
-            {
-
-                employee yeni = new employee();
-                yeni._isim = txtisim.Text;
-                yeni._soyisim = txtsoyisim.Text;
-                yeni._adres = txtadres.Text;
-                yeni._maas = Convert.ToInt32(txtmaas.Text);
-                if (txttecrube.Text != "")
-                    yeni._tecrube = Convert.ToInt32(txttecrube.Text);
-                yeni._sehir = cmbsehir.SelectedIndex;
-                yeni._ogrenim_seviyesi = cmbegitim.SelectedIndex;
-                yeni._yoneticilik_gorevi = cmbyoneticilik.SelectedIndex;
-                yeni._belge_ingilizce = chckingilizce.Checked;
-                yeni._okul_ingilizce = chckingilizceokul.Checked;
-                if (txtlanguage.Text != "")
-                    yeni._yabanci_dil_sayisi = Convert.ToInt32(txtlanguage.Text);
-                yeni._evli_mi = rbtnEvli.Checked;
-                yeni._esi_calismiyomu = chckbxesicalismiyor.Checked;
-                if (chckbxkucuk.Checked)
-                {
-                    yeni._kucuk_cocuk = Convert.ToInt32(txtkucuk.Text);
-                }
-                if (chckbxortanca.Checked)
-                {
-                    yeni._ortanca_cocuk = Convert.ToInt32(txtortanca.Text);
-                }
-                if (chckbxbuyuk.Checked)
-                {
-                    yeni._buyuk_cocuk = Convert.ToInt32(txtbuyuk.Text);
-                }
-                employeecount++;
-                yeni._id = employeecount;
+            FormAddUpdate formaddupdate = new FormAddUpdate();
+            formaddupdate.ShowDialog();
+            employee yeni = formaddupdate.Yeni;
+         
+              
                 lstbxGoster.Items.Add(yeni._id + " " + yeni._isim + " " + yeni._soyisim);
                 employees.Add(yeni);
 
@@ -150,7 +121,7 @@ namespace StaffManagementVisualApplication
 
 
 
-            }
+            
             StreamWriter myOutputStream = new StreamWriter("staff.csv");
             foreach (employee S in employees)
             {
