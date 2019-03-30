@@ -8,7 +8,7 @@ namespace StaffManagementVisualApplication
 {
     class employee
     {
-        
+        private static int counter=0;
         private int sehir;
         private int id;
         private string isim;
@@ -225,6 +225,19 @@ namespace StaffManagementVisualApplication
             set
             {
                 okul_ingilizce = value;
+            }
+        }
+
+        public static int Counter
+        {
+            get
+            {
+                return counter;
+            }
+
+            set
+            {
+                counter = value;
             }
         }
 
