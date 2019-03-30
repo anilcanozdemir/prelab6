@@ -115,6 +115,7 @@
             this.txtbuyuk.Size = new System.Drawing.Size(100, 20);
             this.txtbuyuk.TabIndex = 7;
             this.txtbuyuk.Visible = false;
+            this.txtbuyuk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuyuk_KeyPress);
             // 
             // txtortanca
             // 
@@ -123,6 +124,7 @@
             this.txtortanca.Size = new System.Drawing.Size(100, 20);
             this.txtortanca.TabIndex = 6;
             this.txtortanca.Visible = false;
+            this.txtortanca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtortanca_KeyPress);
             // 
             // txtkucuk
             // 
@@ -131,6 +133,7 @@
             this.txtkucuk.Size = new System.Drawing.Size(100, 20);
             this.txtkucuk.TabIndex = 5;
             this.txtkucuk.Visible = false;
+            this.txtkucuk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtkucuk_KeyPress);
             // 
             // chckbxbuyuk
             // 
@@ -141,6 +144,7 @@
             this.chckbxbuyuk.TabIndex = 4;
             this.chckbxbuyuk.Text = "18 yaş üstü öğrenci çocuk";
             this.chckbxbuyuk.UseVisualStyleBackColor = true;
+            this.chckbxbuyuk.CheckedChanged += new System.EventHandler(this.chckbxbuyuk_CheckedChanged);
             // 
             // chckbxortanca
             // 
@@ -151,6 +155,7 @@
             this.chckbxortanca.TabIndex = 3;
             this.chckbxortanca.Text = "7-18 yaş arası çocuk";
             this.chckbxortanca.UseVisualStyleBackColor = true;
+            this.chckbxortanca.CheckedChanged += new System.EventHandler(this.chckbxortanca_CheckedChanged);
             // 
             // chckbxkucuk
             // 
@@ -161,6 +166,7 @@
             this.chckbxkucuk.TabIndex = 2;
             this.chckbxkucuk.Text = "0-6 yaş arası çocuk";
             this.chckbxkucuk.UseVisualStyleBackColor = true;
+            this.chckbxkucuk.CheckedChanged += new System.EventHandler(this.chckbxkucuk_CheckedChanged);
             // 
             // cmbyoneticilik
             // 
@@ -188,6 +194,7 @@
             this.rbtnEvli.TabIndex = 29;
             this.rbtnEvli.Text = "Evli";
             this.rbtnEvli.UseVisualStyleBackColor = true;
+            this.rbtnEvli.CheckedChanged += new System.EventHandler(this.rbtnEvli_CheckedChanged);
             // 
             // rbtnBekar
             // 
@@ -207,6 +214,8 @@
             this.txtlanguage.Name = "txtlanguage";
             this.txtlanguage.Size = new System.Drawing.Size(19, 20);
             this.txtlanguage.TabIndex = 52;
+           
+            this.txtlanguage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlanguage_KeyPress);
             // 
             // lbldigerdil
             // 
@@ -360,6 +369,7 @@
             this.txttecrube.Name = "txttecrube";
             this.txttecrube.Size = new System.Drawing.Size(100, 20);
             this.txttecrube.TabIndex = 45;
+            this.txttecrube.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttecrube_KeyPress);
             // 
             // lblegitim
             // 
@@ -444,6 +454,7 @@
             this.txtmaas.Name = "txtmaas";
             this.txtmaas.Size = new System.Drawing.Size(100, 20);
             this.txtmaas.TabIndex = 37;
+            this.txtmaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmaas_KeyPress);
             // 
             // txtadres
             // 

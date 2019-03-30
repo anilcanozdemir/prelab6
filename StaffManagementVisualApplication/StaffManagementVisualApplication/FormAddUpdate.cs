@@ -12,22 +12,22 @@ namespace StaffManagementVisualApplication
 {
     public partial class FormAddUpdate : Form
     {
-        private employee yeni;
+        private employee staff;
         public FormAddUpdate()
         {
             InitializeComponent();
         }
 
-        internal employee Yeni
+        internal employee Staff
         {
             get
             {
-                return yeni;
+                return staff;
             }
 
             set
             {
-                yeni = value;
+                staff = value;
             }
         }
 
@@ -64,12 +64,97 @@ namespace StaffManagementVisualApplication
                 {
                     yeni._buyuk_cocuk = Convert.ToInt32(txtbuyuk.Text);
                 }
+                if (yeni._id == 0)
+                {
+                    employee.Counter++;
+                    yeni._id = employee.Counter;
+                }
+                yeni.Bmoo = yeni.bmo();
+                staff = yeni;
             }
-            if (yeni._id ==null) {
-                employee.Counter++;
-                yeni._id = employee.Counter;
-            }
+            this.Hide();
             
+        }
+
+        private void rbtnEvli_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnEvli.Checked)
+            {
+                grpbxAile.Visible = true;
+            }
+            else
+            {
+                grpbxAile.Visible = false;
+            }
+        }
+
+        private void chckbxkucuk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckbxkucuk.Checked)
+            {
+                txtkucuk.Visible = true;
+
+            }
+            else
+            {
+                txtkucuk.Visible = false;
+            }
+        }
+
+        private void chckbxortanca_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckbxortanca.Checked)
+            {
+                txtortanca.Visible = true;
+            }
+            else
+            {
+                txtortanca.Visible = false;
+            }
+        }
+
+        private void chckbxbuyuk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckbxbuyuk.Checked)
+            {
+                txtbuyuk.Visible = true;
+            }
+            else
+            {
+                txtbuyuk.Visible = false;
+            }
+        }
+
+        private void txtmaas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txttecrube_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtkucuk_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtortanca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtbuyuk_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        
+
+        private void txtlanguage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

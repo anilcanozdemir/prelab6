@@ -20,65 +20,68 @@ namespace StaffManagementVisualApplication
 
         }
 
-
-        private void rbtnMarried_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbtnEvli.Checked)
-            {
-                grpbxAile.Visible = true;
-            }
-            else
-            {
-                grpbxAile.Visible = false;
-            }
-        }
-
-        private void chckbxlittle_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chckbxkucuk.Checked)
-            {
-                txtkucuk.Visible = true;
-
-            }
-            else
-            {
-                txtkucuk.Visible = false;
-            }
-        }
-
-        private void chckmiddle_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chckbxortanca.Checked)
-            {
-                txtortanca.Visible = true;
-            }
-            else
-            {
-                txtortanca.Visible = false;
-            }
-
-        }
-
-        private void chckbxolder_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chckbxbuyuk.Checked)
-            {
-                txtbuyuk.Visible = true;
-            }
-            else
-            {
-                txtbuyuk.Visible = false;
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (var reader = new StreamReader("staff.csv", Encoding.GetEncoding("iso-8859-9"), false))
+            lstviewİsci.Columns.Add("ID", 150);
+            lstviewİsci.Columns.Add("ISIM", 50);
+            lstviewİsci.Columns.Add("SOYISIM", 80);
+            lstviewİsci.Columns.Add("MAAS", 80);
+            lstviewİsci.Columns.Add("BMO", 80);
+        }   
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            FormAddUpdate formaddupdate = new FormAddUpdate();
+            formaddupdate.ShowDialog();
+            employee yeni = formaddupdate.Staff;
+            formaddupdate.Dispose();
+            string[] isciozellik = new string[5];
+            isciozellik[0] = yeni._id.ToString();
+            isciozellik[1] = yeni._isim;
+            isciozellik[2] = yeni._soyisim;
+            isciozellik[3] = yeni._maas.ToString();
+            isciozellik[4] = yeni.Bmoo.ToString();
+            ListViewItem isci = new ListViewItem(isciozellik);
+            lstviewİsci.Items.Add(isci);
+            employees.Add(yeni);
+
+        }
+
+       
+        private void btnYükle_Click(object sender, EventArgs e)
+        {
+            string yol = "";
+            OpenFileDialog Yükle = new OpenFileDialog();
+            
+            Yükle.InitialDirectory = "D:\\";
+            Yükle.Title = "Eleman listesinin bulunduğu dosyayı seçin";
+            Yükle.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv";
+            
+            if (Yükle.ShowDialog()==DialogResult.OK)
+            {
+                yol = Yükle.FileName;
+            }
+            int yüklefilter = Yükle.FilterIndex;
+
+            using (var reader = new StreamReader(yol, Encoding.GetEncoding("iso-8859-9"), false))
             {
                 while (!reader.EndOfStream)
                 {
+                    string[] Parcalanmisdesen;
                     string mydesen = reader.ReadLine();
-                    string[] Parcalanmisdesen = mydesen.Split(',');
+                    if (yüklefilter == 1)
+                    {
+                        Parcalanmisdesen = mydesen.Split(',');
+                    }
+                    else if (yüklefilter == 2)
+                    { 
+                    Parcalanmisdesen = mydesen.Split('\t');
+                    }
+                    else
+                    {
+                        break;
+                    }
                     employee yeni = new employee();
 
                     yeni._id = Convert.ToInt32(Parcalanmisdesen[0]);
@@ -98,220 +101,76 @@ namespace StaffManagementVisualApplication
                     yeni._ortanca_cocuk = Convert.ToInt32(Parcalanmisdesen[14]);
                     yeni._buyuk_cocuk = Convert.ToInt32(Parcalanmisdesen[15]);
                     yeni._esi_calismiyomu = Convert.ToBoolean(Parcalanmisdesen[16]);
-
+                    yeni.Bmoo = yeni.bmo();
+                    string[] isciozellik = new string[5];
+                    isciozellik[0] = yeni._id.ToString();
+                    isciozellik[1] = yeni._isim;
+                    isciozellik[2] = yeni._soyisim;
+                    isciozellik[3] = yeni._maas.ToString()                        ;
+                    isciozellik[4] = yeni.Bmoo.ToString();
                     employees.Add(yeni);
-                    lstbxGoster.Items.Add(yeni._id + " " + yeni._isim + " " + yeni._soyisim);
+                    ListViewItem isci = new ListViewItem(isciozellik);
+                    
                     employee.Counter = yeni._id;
+                    lstviewİsci.Items.Add(isci);
                 }
+             
             }
-        }   
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
         {
+            if (lstviewİsci.CheckedItems.Count != 0)
+            {
+                for (int i = 0; i < lstviewİsci.CheckedItems.Count; i++)
+                {
+                    int index=lstviewİsci.Items.IndexOf(lstviewİsci.CheckedItems[i]);
+                    employees.RemoveAt(index);
+                    lstviewİsci.Items.Remove(lstviewİsci.CheckedItems[i]);
 
-            FormAddUpdate formaddupdate = new FormAddUpdate();
-            formaddupdate.ShowDialog();
-            employee yeni = formaddupdate.Yeni;
-         
-              
-                lstbxGoster.Items.Add(yeni._id + " " + yeni._isim + " " + yeni._soyisim);
-                employees.Add(yeni);
+                    i = i - 1;
+                }
 
-                lblbmo.Text = "BMO: " + yeni.bmo().ToString();
+                
+            }
+           
+        }
 
-
-
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog Kaydet = new SaveFileDialog();
+            Kaydet.Title = "Eleman listesinin bulunduğu dosyayı seçin";
+            Kaydet.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv";
             
-            StreamWriter myOutputStream = new StreamWriter("staff.csv");
-            foreach (employee S in employees)
+            if (Kaydet.ShowDialog() == DialogResult.OK)
             {
-                myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
-            }
-            myOutputStream.Close();
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (lstbxGoster.SelectedIndex != -1)
-            {
-                employees.RemoveAt(lstbxGoster.SelectedIndex);
-                lstbxGoster.Items.RemoveAt(lstbxGoster.SelectedIndex);
-
-
-
-
-
-
-            }
-            StreamWriter myOutputStream = new StreamWriter("staff.csv");
-            foreach (employee S in employees)
-            {
-                myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
-            }
-            myOutputStream.Close();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (lstbxGoster.SelectedItem != null)
-            {
-                string mydesen = lstbxGoster.SelectedItem.ToString();
-                string[] ParcalanmisDesen = mydesen.Split(' ');
-                foreach (employee S in employees)
+                StreamWriter writer = new StreamWriter(Kaydet.OpenFile());
+                int index = Kaydet.FilterIndex;
+                if (index == 1)
                 {
-                    if (S._id == Convert.ToInt32(ParcalanmisDesen[0]))
+                    foreach (employee S in employees)
                     {
-
-                        S._isim = txtisim.Text;
-                        S._soyisim = txtsoyisim.Text;
-                        S._adres = txtadres.Text;
-                        S._maas = Convert.ToInt32(txtmaas.Text);
-                        if (txttecrube.Text != "")
-                            S._tecrube = Convert.ToInt32(txttecrube.Text);
-                        S._sehir = cmbsehir.SelectedIndex;
-                        S._ogrenim_seviyesi = cmbegitim.SelectedIndex;
-                        S._yoneticilik_gorevi = cmbyoneticilik.SelectedIndex;
-                        S._belge_ingilizce = chckingilizce.Checked;
-                        S._okul_ingilizce = chckingilizceokul.Checked;
-                        if (txtlanguage.Text != "")
-                            S._yabanci_dil_sayisi = Convert.ToInt32(txtlanguage.Text);
-                        S._evli_mi = rbtnEvli.Checked;
-                        S._esi_calismiyomu = chckbxesicalismiyor.Checked;
-                        if (chckbxkucuk.Checked)
-                        {
-                            S._kucuk_cocuk = Convert.ToInt32(txtkucuk.Text);
-                        }
-
-                        if (rbtnBekar.Checked)
-                        {
-                            S._kucuk_cocuk = 0;
-                            chckbxkucuk.Checked = false;
-                            txtkucuk.Text = "";
-                            txtbuyuk.Text = "";
-                            txtortanca.Text = "";
-                            S._ortanca_cocuk = 0;
-                            chckbxortanca.Checked = false;
-                            S._buyuk_cocuk = 0;
-                            chckbxkucuk.Checked = false;
-                            chckbxesicalismiyor.Checked = false;
-                        }
-
-                        
-                        if (chckbxortanca.Checked)
-                        {
-                            S._ortanca_cocuk = Convert.ToInt32(txtortanca.Text);
-                        }
-                        
-                        if (chckbxbuyuk.Checked)
-                        {
-                            S._buyuk_cocuk = Convert.ToInt32(txtbuyuk.Text);
-                        }
-                        
-                        string guncel = "";
-                        guncel += S._id + " " + S._isim + " " + S._soyisim;
-
-                        lstbxGoster.Items.Insert(S._id - 1, guncel);
-                        lstbxGoster.Items.RemoveAt(S._id);
-                        lblbmo.Text = "BMO: " + S.bmo().ToString();
-
+                        writer.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
                     }
+                    writer.Close();
+                }
+                if(index==2)
+                {
+                    foreach (employee S in employees)
+                    {
+                        writer.WriteLine(S._id + "\t" + S._isim + "\t" + S._soyisim + "\t" + S._adres + "\t" + S._maas + "\t" + S._tecrube + "\t" + S._sehir + "\t" + S._ogrenim_seviyesi + "\t" + S._belge_ingilizce + "\t" + S._okul_ingilizce + "\t" + S._yabanci_dil_sayisi + "\t" + S._yoneticilik_gorevi + "\t" + S._evli_mi + "\t" + S._kucuk_cocuk + "\t" + S._ortanca_cocuk + "\t" + S._buyuk_cocuk + "\t" + S._esi_calismiyomu);
+                    }
+                    writer.Close();
+
                 }
             }
-            StreamWriter myOutputStream = new StreamWriter("staff.csv");
-            foreach (employee S in employees)
-            {
-                myOutputStream.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu);
-            }
-            myOutputStream.Close();
+            
         }
 
-        private void lstbxStaffs_SelectedIndexChanged(object sender, EventArgs e)
+        private void lstviewİsci_DoubleClick(object sender, EventArgs e)
         {
-            if (lstbxGoster.SelectedItem != null)
-            {
-                string mydesen = lstbxGoster.SelectedItem.ToString();
-                string[] ParcalanmisDesen = mydesen.Split(' ');
-                foreach (employee S in employees)
-                {
-                    if (S._id == Convert.ToInt32(ParcalanmisDesen[0]))
-                    {
-                        txtisim.Text = S._isim;
-                        txtsoyisim.Text = S._soyisim;
-                        txtadres.Text = S._adres;
-                        txttecrube.Text = S._tecrube.ToString();
-                        txtlanguage.Text = S._yabanci_dil_sayisi.ToString();
-                        txtkucuk.Text = S._kucuk_cocuk.ToString();
-                        txtortanca.Text = S._ortanca_cocuk.ToString();
-                        txtmaas.Text = S._maas.ToString();
-                        txtbuyuk.Text = S._buyuk_cocuk.ToString();
-                        cmbsehir.SelectedIndex = S._sehir;
-                        cmbegitim.SelectedIndex = S._ogrenim_seviyesi;
-                        cmbyoneticilik.SelectedIndex = S._yoneticilik_gorevi;
-                        if (S._okul_ingilizce == true)
-                            chckingilizceokul.Checked = true;
-                        if (S._okul_ingilizce == false)
-                            chckingilizceokul.Checked = false;
-                        if (S._belge_ingilizce == true)
-                            chckingilizce.Checked = true;
-                        if (S._belge_ingilizce == false)
-                            chckingilizce.Checked = false;
-                        if (S._evli_mi == true)
-                            rbtnEvli.Checked = true;
-                        if (S._evli_mi == false)
-                            rbtnBekar.Checked = true;
-                        if (S._esi_calismiyomu == true)
-                            chckbxesicalismiyor.Checked = true;
-                        if (S._esi_calismiyomu == false)
-                            chckbxesicalismiyor.Checked = false;
-                        if (S._kucuk_cocuk > 0)
-                            chckbxkucuk.Checked = true;
-                        if (S._kucuk_cocuk == 0)
-                            chckbxkucuk.Checked = false;
-                        if (S._ortanca_cocuk > 0)
-                            chckbxortanca.Checked = true;
-                        if (S._ortanca_cocuk == 0)
-                            chckbxortanca.Checked = false;
-                        if (S._buyuk_cocuk > 0)
-                            chckbxbuyuk.Checked = true;
-                        if (S._buyuk_cocuk == 0)
-                            chckbxbuyuk.Checked = false;
-                        lblbmo.Text ="BMO: "+ S.bmo().ToString();
-                    }
-                }
-            }
-        }
 
-        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
-        private void txtExperince_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void txtlittle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void txtmiddle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void txtolder_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void txtlanguage_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        
     }
 }

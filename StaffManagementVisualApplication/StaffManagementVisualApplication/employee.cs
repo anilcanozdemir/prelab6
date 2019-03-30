@@ -15,6 +15,7 @@ namespace StaffManagementVisualApplication
         private string soyisim;
         private string adres;
         private int maas=0;
+        private double bmoo = 0;
         private bool belge_ingilizce = false;
         private bool okul_ingilizce = false;
         private int yabanci_dil_sayisi=0;
@@ -238,6 +239,19 @@ namespace StaffManagementVisualApplication
             set
             {
                 counter = value;
+            }
+        }
+
+        public double Bmoo
+        {
+            get
+            {
+                return bmoo;
+            }
+
+            set
+            {
+                this.bmoo = value;
             }
         }
 
