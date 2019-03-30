@@ -214,7 +214,6 @@
             this.txtlanguage.Name = "txtlanguage";
             this.txtlanguage.Size = new System.Drawing.Size(19, 20);
             this.txtlanguage.TabIndex = 52;
-           
             this.txtlanguage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlanguage_KeyPress);
             // 
             // lbldigerdil
@@ -506,6 +505,7 @@
             this.Controls.Add(this.txtadres);
             this.Name = "FormAddUpdate";
             this.Text = "FormAddUpdate";
+            this.Load += new System.EventHandler(this.FormAddUpdate_Load);
             this.grpbxAile.ResumeLayout(false);
             this.grpbxAile.PerformLayout();
             this.ResumeLayout(false);

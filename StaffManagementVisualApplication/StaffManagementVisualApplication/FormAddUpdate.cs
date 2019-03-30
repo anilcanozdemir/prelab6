@@ -18,20 +18,7 @@ namespace StaffManagementVisualApplication
             InitializeComponent();
         }
 
-        internal employee Staff
-        {
-            get
-            {
-                return staff;
-            }
-
-            set
-            {
-                staff = value;
-            }
-        }
-
-        private void btnKaydet_Click(object sender, EventArgs e)
+     public bool Kaydet()
         {
             if (txtisim.Text != "" && txtsoyisim.Text != "" && txtadres.Text != "" && txtmaas.Text != "" && cmbsehir.SelectedItem != null && cmbegitim.SelectedItem != null && cmbyoneticilik.SelectedItem != null)
             {
@@ -71,7 +58,28 @@ namespace StaffManagementVisualApplication
                 }
                 yeni.Bmoo = yeni.bmo();
                 staff = yeni;
+                return true;
             }
+            return false;
+        }
+        internal employee Staff
+        {
+            get
+            {
+                return staff;
+            }
+
+            set
+            {
+                staff = value;
+            }
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            
+        
+            Kaydet();
             this.Hide();
             
         }
@@ -155,6 +163,54 @@ namespace StaffManagementVisualApplication
         private void txtlanguage_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void FormAddUpdate_Load(object sender, EventArgs e)
+        {
+            if (staff != null)
+            {
+                txtisim.Text = staff._isim;
+                txtsoyisim.Text = staff._soyisim;
+                txtadres.Text = staff._adres;
+                txttecrube.Text = staff._tecrube.ToString();
+                txtlanguage.Text = staff._yabanci_dil_sayisi.ToString();
+                txtkucuk.Text = staff._kucuk_cocuk.ToString();
+                txtortanca.Text = staff._ortanca_cocuk.ToString();
+                txtmaas.Text = staff._maas.ToString();
+                txtbuyuk.Text = staff._buyuk_cocuk.ToString();
+                cmbsehir.SelectedIndex = staff._sehir;
+                cmbegitim.SelectedIndex = staff._ogrenim_seviyesi;
+                cmbyoneticilik.SelectedIndex = staff._yoneticilik_gorevi;
+                if (staff._okul_ingilizce == true)
+                    chckingilizceokul.Checked = true;
+                if (staff._okul_ingilizce == false)
+                    chckingilizceokul.Checked = false;
+                if (staff._belge_ingilizce == true)
+                    chckingilizce.Checked = true;
+                if (staff._belge_ingilizce == false)
+                    chckingilizce.Checked = false;
+                if (staff._evli_mi == true)
+                    rbtnEvli.Checked = true;
+                if (staff._evli_mi == false)
+                    rbtnBekar.Checked = true;
+                if (staff._esi_calismiyomu == true)
+                    chckbxesicalismiyor.Checked = true;
+                if (staff._esi_calismiyomu == false)
+                    chckbxesicalismiyor.Checked = false;
+                if (staff._kucuk_cocuk > 0)
+                    chckbxkucuk.Checked = true;
+                if (staff._kucuk_cocuk == 0)
+                    chckbxkucuk.Checked = false;
+                if (staff._ortanca_cocuk > 0)
+                    chckbxortanca.Checked = true;
+                if (staff._ortanca_cocuk == 0)
+                    chckbxortanca.Checked = false;
+                if (staff._buyuk_cocuk > 0)
+                    chckbxbuyuk.Checked = true;
+                if (staff._buyuk_cocuk == 0)
+                    chckbxbuyuk.Checked = false;
+                lblbmo.Text = "BMO: " + staff.bmo().ToString();
+            }
         }
     }
 }

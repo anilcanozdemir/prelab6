@@ -13,7 +13,7 @@ namespace StaffManagementVisualApplication
 {
     public partial class YonetimBirimiApplication : Form
     {
-        List<employee> employees = new List<employee>();
+         List<employee> employees = new List<employee>();
         public YonetimBirimiApplication()
         {
             InitializeComponent();
@@ -171,6 +171,33 @@ namespace StaffManagementVisualApplication
         private void lstviewİsci_DoubleClick(object sender, EventArgs e)
         {
 
+            int index=lstviewİsci.Items.IndexOf(lstviewİsci.SelectedItems[0]);
+            FormAddUpdate formupdate = new FormAddUpdate();
+            formupdate.Staff = employees[index];
+            formupdate.Show();
+            
+            int indexofemp = formupdate.Staff._id;
+
+            lstviewİsci.Items.RemoveAt(index);
+            employees.RemoveAt(index);
+            employee yeni = formupdate.Staff;
+           
+            yeni._id = indexofemp;
+            employee.Counter--;
+            employees.Insert(indexofemp-1, yeni);
+            
+            string[] isciozellik = new string[5];
+            isciozellik[0] = yeni._id.ToString();
+            isciozellik[1] = yeni._isim;
+            isciozellik[2] = yeni._soyisim;
+            isciozellik[3] = yeni._maas.ToString();
+            isciozellik[4] = yeni.Bmoo.ToString();
+            ListViewItem isci = new ListViewItem(isciozellik);
+            lstviewİsci.Items.Insert(indexofemp-1,isci);
+           
+
         }
+
+       
     }
 }
