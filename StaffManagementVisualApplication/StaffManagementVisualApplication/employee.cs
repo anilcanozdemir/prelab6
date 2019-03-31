@@ -8,6 +8,7 @@ namespace StaffManagementVisualApplication
 {
     class employee
     {
+        private string photo="";
         private static int counter=0;
         private int sehir;
         private int id;
@@ -19,6 +20,7 @@ namespace StaffManagementVisualApplication
         private bool belge_ingilizce = false;
         private bool okul_ingilizce = false;
         private int yabanci_dil_sayisi=0;
+        
         private int tecrube=0;
         private bool evli_mi=false;
         private bool esi_calismiyomu = false;
@@ -252,6 +254,19 @@ namespace StaffManagementVisualApplication
             set
             {
                 this.bmoo = value;
+            }
+        }
+
+        public string Photo
+        {
+            get
+            {
+                return photo;
+            }
+
+            set
+            {
+                photo = value;
             }
         }
 

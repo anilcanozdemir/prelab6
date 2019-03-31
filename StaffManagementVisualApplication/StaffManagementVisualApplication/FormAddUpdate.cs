@@ -18,7 +18,7 @@ namespace StaffManagementVisualApplication
             InitializeComponent();
         }
 
-     public bool Kaydet()
+     public void Kaydet()
         {
             if (txtisim.Text != "" && txtsoyisim.Text != "" && txtadres.Text != "" && txtmaas.Text != "" && cmbsehir.SelectedItem != null && cmbegitim.SelectedItem != null && cmbyoneticilik.SelectedItem != null)
             {
@@ -34,6 +34,7 @@ namespace StaffManagementVisualApplication
                 yeni._ogrenim_seviyesi = cmbegitim.SelectedIndex;
                 yeni._yoneticilik_gorevi = cmbyoneticilik.SelectedIndex;
                 yeni._belge_ingilizce = chckingilizce.Checked;
+                
                 yeni._okul_ingilizce = chckingilizceokul.Checked;
                 if (txtlanguage.Text != "")
                     yeni._yabanci_dil_sayisi = Convert.ToInt32(txtlanguage.Text);
@@ -56,11 +57,16 @@ namespace StaffManagementVisualApplication
                     employee.Counter++;
                     yeni._id = employee.Counter;
                 }
+                if (picbxfoto.ImageLocation != "")
+                {
+                    yeni.Photo = picbxfoto.ImageLocation;
+                }
                 yeni.Bmoo = yeni.bmo();
                 staff = yeni;
-                return true;
+                
+               
             }
-            return false;
+           
         }
         internal employee Staff
         {
@@ -209,8 +215,27 @@ namespace StaffManagementVisualApplication
                     chckbxbuyuk.Checked = true;
                 if (staff._buyuk_cocuk == 0)
                     chckbxbuyuk.Checked = false;
+                if(staff.Photo!="")
+                {
+                    picbxfoto.ImageLocation = staff.Photo;
+                }
                 lblbmo.Text = "BMO: " + staff.bmo().ToString();
             }
+        }
+
+        private void btnfoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfoto = new OpenFileDialog();
+            openfoto.Filter = "Png|*.png|Jpeg|*.jpeg|Jpg|*.jpg";
+            string yol = "";
+            if(openfoto.ShowDialog()==DialogResult.OK)
+            {
+                yol = openfoto.FileName;
+
+            }
+            picbxfoto.ImageLocation = yol;
+            
+
         }
     }
 }

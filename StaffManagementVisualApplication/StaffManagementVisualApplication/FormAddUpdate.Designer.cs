@@ -61,7 +61,10 @@
             this.txtmaas = new System.Windows.Forms.TextBox();
             this.txtadres = new System.Windows.Forms.TextBox();
             this.btnKaydet = new System.Windows.Forms.Button();
+            this.picbxfoto = new System.Windows.Forms.PictureBox();
+            this.btnfoto = new System.Windows.Forms.Button();
             this.grpbxAile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxfoto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblbmo
@@ -472,11 +475,32 @@
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
+            // picbxfoto
+            // 
+            this.picbxfoto.Location = new System.Drawing.Point(163, 104);
+            this.picbxfoto.Name = "picbxfoto";
+            this.picbxfoto.Size = new System.Drawing.Size(157, 183);
+            this.picbxfoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbxfoto.TabIndex = 58;
+            this.picbxfoto.TabStop = false;
+            // 
+            // btnfoto
+            // 
+            this.btnfoto.Location = new System.Drawing.Point(194, 309);
+            this.btnfoto.Name = "btnfoto";
+            this.btnfoto.Size = new System.Drawing.Size(75, 23);
+            this.btnfoto.TabIndex = 59;
+            this.btnfoto.Text = "Fotoğraf Yükle";
+            this.btnfoto.UseVisualStyleBackColor = true;
+            this.btnfoto.Click += new System.EventHandler(this.btnfoto_Click);
+            // 
             // FormAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 497);
+            this.Controls.Add(this.btnfoto);
+            this.Controls.Add(this.picbxfoto);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.lblbmo);
             this.Controls.Add(this.label2);
@@ -508,6 +532,7 @@
             this.Load += new System.EventHandler(this.FormAddUpdate_Load);
             this.grpbxAile.ResumeLayout(false);
             this.grpbxAile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxfoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,5 +573,7 @@
         private System.Windows.Forms.TextBox txtmaas;
         private System.Windows.Forms.TextBox txtadres;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.PictureBox picbxfoto;
+        private System.Windows.Forms.Button btnfoto;
     }
 }
