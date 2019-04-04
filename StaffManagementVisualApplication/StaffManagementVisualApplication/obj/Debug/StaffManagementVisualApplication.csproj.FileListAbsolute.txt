@@ -59,3 +59,7 @@ C:\Users\mcali\Desktop\StaffManagementVisualApplication\StaffManagementVisualApp
 C:\Users\mcali\Desktop\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mcali\Desktop\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\mcali\Desktop\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mcali\Documents\prelab6\StaffManagementVisualApplication\StaffManagementVisualApplication\obj\Debug\StaffManagementVisualApplication.FormAddUpdate.resources
