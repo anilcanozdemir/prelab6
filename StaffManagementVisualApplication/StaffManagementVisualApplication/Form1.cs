@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace StaffManagementVisualApplication
 {
@@ -19,6 +20,8 @@ namespace StaffManagementVisualApplication
             InitializeComponent();
 
         }
+
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -59,7 +62,7 @@ namespace StaffManagementVisualApplication
 
             Yükle.InitialDirectory = "D:\\";
             Yükle.Title = "Eleman listesinin bulunduğu dosyayı seçin";
-            Yükle.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv";
+            Yükle.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv|Json File|*.txt";
 
             if (Yükle.ShowDialog() == DialogResult.OK)
             {
@@ -81,6 +84,10 @@ namespace StaffManagementVisualApplication
                         else if (yüklefilter == 2)
                         {
                             Parcalanmisdesen = mydesen.Split('\t');
+                        }
+                        else if (yüklefilter == 3)
+                        {
+                            Parcalanmisdesen = mydesen.Split();
                         }
                         else
                         {
@@ -121,11 +128,14 @@ namespace StaffManagementVisualApplication
 
                         employee.Counter = yeni._id;
                         lstviewİsci.Items.Add(isci);
+                        
                     }
+                    
 
                 }
 
             }
+            
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
@@ -149,7 +159,7 @@ namespace StaffManagementVisualApplication
         {
             SaveFileDialog Kaydet = new SaveFileDialog();
             Kaydet.Title = "Eleman listesinin bulunduğu dosyayı seçin";
-            Kaydet.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv";
+            Kaydet.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv|Text File|*.txt";
 
             if (Kaydet.ShowDialog() == DialogResult.OK)
             {
@@ -157,20 +167,47 @@ namespace StaffManagementVisualApplication
                 int index = Kaydet.FilterIndex;
                 if (index == 1)
                 {
+                    prgrsbrsürec.Value = 0;
+                    int temp = 100 / employees.Count + 1;
                     foreach (employee S in employees)
                     {
+                        
+                       
                         writer.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu + "," + S.Photo);
+                        prgrsbrsürec.Increment(temp);
                     }
                     writer.Close();
+                    
+                    
                 }
                 if (index == 2)
                 {
+                    prgrsbrsürec.Value = 0;
+                    int temp = 100 / employees.Count + 1;
                     foreach (employee S in employees)
                     {
+                        
+                       
                         writer.WriteLine(S._id + "\t" + S._isim + "\t" + S._soyisim + "\t" + S._adres + "\t" + S._maas + "\t" + S._tecrube + "\t" + S._sehir + "\t" + S._ogrenim_seviyesi + "\t" + S._belge_ingilizce + "\t" + S._okul_ingilizce + "\t" + S._yabanci_dil_sayisi + "\t" + S._yoneticilik_gorevi + "\t" + S._evli_mi + "\t" + S._kucuk_cocuk + "\t" + S._ortanca_cocuk + "\t" + S._buyuk_cocuk + "\t" + S._esi_calismiyomu + "\t" + S.Photo);
+                        prgrsbrsürec.Increment(temp);
                     }
                     writer.Close();
+                    
 
+                }
+                if (index == 3)
+                {
+                    prgrsbrsürec.Value = 0;
+                    int temp = 100 / employees.Count + 1;
+                    foreach (employee S in employees)
+                    {
+                        
+                        
+                        writer.WriteLine(S.Donustur());
+                        prgrsbrsürec.Increment(temp);
+                    }
+                    writer.Close();
+                    
                 }
             }
 
@@ -216,6 +253,6 @@ namespace StaffManagementVisualApplication
 
         }
 
-
+        
     }
 }

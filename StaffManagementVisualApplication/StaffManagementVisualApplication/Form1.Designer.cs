@@ -33,6 +33,7 @@
             this.btnYükle = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.prgrsbrsürec = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -88,11 +89,19 @@
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // prgrsbrsürec
+            // 
+            this.prgrsbrsürec.Location = new System.Drawing.Point(12, 364);
+            this.prgrsbrsürec.Name = "prgrsbrsürec";
+            this.prgrsbrsürec.Size = new System.Drawing.Size(400, 20);
+            this.prgrsbrsürec.TabIndex = 6;
+            // 
             // YonetimBirimiApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 496);
+            this.Controls.Add(this.prgrsbrsürec);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnYükle);
@@ -112,6 +121,7 @@
         private System.Windows.Forms.Button btnYükle;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.ProgressBar prgrsbrsürec;
     }
 }
 

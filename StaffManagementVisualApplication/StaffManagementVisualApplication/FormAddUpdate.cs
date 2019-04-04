@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Web;
+using Newtonsoft.Json;
+
 
 namespace StaffManagementVisualApplication
 {
@@ -17,6 +20,11 @@ namespace StaffManagementVisualApplication
         {
             InitializeComponent();
         }
+
+
+        
+
+
 
      public void Kaydet()
         {

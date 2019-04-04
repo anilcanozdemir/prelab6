@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,8 +31,19 @@ namespace StaffManagementVisualApplication
         private int ogrenim_seviyesi=0;
         private int yoneticlik_gorevi=0;
 
-       
-        
+
+        public employee()
+        {
+
+        }
+
+        public string Donustur()
+        {
+            var jsonString = JsonConvert.SerializeObject(this);
+
+            return jsonString;
+        }
+
 
         public int _sehir
         {
