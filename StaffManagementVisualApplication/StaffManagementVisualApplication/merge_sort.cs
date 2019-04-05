@@ -8,11 +8,11 @@ namespace StaffManagementVisualApplication
 {
     class merge_sort
     {
-        static public void MainMerge(int[] numbers, int left, int mid, int right)
+        static public void MainMerge(int[] numbers, int left, int mid, int right,int count)
 
         {
 
-            int[] temp = new int[25];
+            int[] temp = new int[count];
 
             int i, eol, num, pos;
 
@@ -68,7 +68,7 @@ namespace StaffManagementVisualApplication
 
 
 
-        static public void SortMerge(int[] numbers, int left, int right)
+        static public void SortMerge(int[] numbers, int left, int right,int count)
 
         {
 
@@ -82,13 +82,13 @@ namespace StaffManagementVisualApplication
 
                 mid = (right + left) / 2;
 
-                SortMerge(numbers, left, mid);
+                SortMerge(numbers, left, mid,count);
 
-                SortMerge(numbers, (mid + 1), right);
+                SortMerge(numbers, (mid + 1), right, count);
 
 
 
-                MainMerge(numbers, left, (mid + 1), right);
+                MainMerge(numbers, left, (mid + 1), right,count);
 
             }
 

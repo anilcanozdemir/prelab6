@@ -290,7 +290,7 @@ namespace StaffManagementVisualApplication
                 numbers[i] = S._maas;
                 i++;
             }
-            merge_sort.SortMerge(numbers, 0, employees.Count - 1);
+            merge_sort.SortMerge(numbers, 0, employees.Count - 1,employees.Count);
 
             for (int j = 0; j < employees.Count; j++)
             {
