@@ -30,6 +30,7 @@ namespace StaffManagementVisualApplication
             lstviewİsci.Columns.Add("SOYISIM", 80);
             lstviewİsci.Columns.Add("MAAS", 80);
             lstviewİsci.Columns.Add("BMO", 80);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -57,6 +58,8 @@ namespace StaffManagementVisualApplication
 
         private void btnYükle_Click(object sender, EventArgs e)
         {
+            pBsürec.Value = 0;
+
             string yol = "";
             OpenFileDialog Yükle = new OpenFileDialog();
 
@@ -69,6 +72,7 @@ namespace StaffManagementVisualApplication
 
                 yol = Yükle.FileName;
             }
+
             FileInfo bilgi = new FileInfo(yol);
             float uzunluk = bilgi.Length;
             float temp = 100 / uzunluk;
@@ -132,11 +136,10 @@ namespace StaffManagementVisualApplication
                             employee.Counter = yeni._id;
                         }
                         lstviewİsci.Items.Add(isci);
-                        
+
                         pBsürec.Increment(Convert.ToInt32(desen_uzunlugu));
 
                     }
-
 
                 }
 
@@ -163,6 +166,7 @@ namespace StaffManagementVisualApplication
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+
             SaveFileDialog Kaydet = new SaveFileDialog();
             Kaydet.Title = "Eleman listesinin bulunduğu dosyayı seçin";
             Kaydet.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv|Json File|*.txt";
@@ -275,8 +279,61 @@ namespace StaffManagementVisualApplication
             }
         }
 
+
         private void btnSırala_Click(object sender, EventArgs e)
         {
+            lstviewİsci.Items.Clear();
+            int[] numbers = new int[employees.Count];
+            int i = 0;
+            foreach (employee S in employees)
+            {
+                numbers[i] = S._maas;
+                i++;
+            }
+            merge_sort.SortMerge(numbers, 0, employees.Count - 1);
+
+            for (int j = 0; j < employees.Count; j++)
+            {
+                for (i = 0; i < numbers.Length; i++)
+                {
+                    if (employees[j]._maas == numbers[i])
+                    {
+
+                        employees.Insert(i, employees[j]);
+                        employees.RemoveAt(j + 1);
+
+                    }
+                }
+
+            }
+            string[] isciozellik = new string[5];
+            if (rbtnAzalan.Checked == true)
+            {
+                for (int j = employees.Count-1; j >=0; j--)
+                {
+                    isciozellik[0] = employees[j]._id.ToString();
+                    isciozellik[1] = employees[j]._isim;
+                    isciozellik[2] = employees[j]._soyisim;
+                    isciozellik[3] = employees[j]._maas.ToString();
+                    isciozellik[4] = employees[j].Bmoo.ToString();
+                    ListViewItem isci = new ListViewItem(isciozellik);
+                    lstviewİsci.Items.Add(isci);
+                }
+            }
+
+            else
+            {
+                for (int j = 0; j < employees.Count; j++)
+                {
+                    isciozellik[0] = employees[j]._id.ToString();
+                    isciozellik[1] = employees[j]._isim;
+                    isciozellik[2] = employees[j]._soyisim;
+                    isciozellik[3] = employees[j]._maas.ToString();
+                    isciozellik[4] = employees[j].Bmoo.ToString();
+                    ListViewItem isci = new ListViewItem(isciozellik);
+                    lstviewİsci.Items.Add(isci);
+                }
+            }
 
         }
     }

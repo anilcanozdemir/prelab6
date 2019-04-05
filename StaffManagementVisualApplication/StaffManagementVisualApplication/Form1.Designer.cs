@@ -35,6 +35,8 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.pBsürec = new System.Windows.Forms.ProgressBar();
             this.btnSırala = new System.Windows.Forms.Button();
+            this.rbtnAzalan = new System.Windows.Forms.RadioButton();
+            this.rbtnArtan = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -107,11 +109,35 @@
             this.btnSırala.UseVisualStyleBackColor = true;
             this.btnSırala.Click += new System.EventHandler(this.btnSırala_Click);
             // 
+            // rbtnAzalan
+            // 
+            this.rbtnAzalan.AutoSize = true;
+            this.rbtnAzalan.Location = new System.Drawing.Point(498, 366);
+            this.rbtnAzalan.Name = "rbtnAzalan";
+            this.rbtnAzalan.Size = new System.Drawing.Size(57, 17);
+            this.rbtnAzalan.TabIndex = 8;
+            this.rbtnAzalan.Text = "Azalan";
+            this.rbtnAzalan.UseVisualStyleBackColor = true;
+            // 
+            // rbtnArtan
+            // 
+            this.rbtnArtan.AutoSize = true;
+            this.rbtnArtan.Checked = true;
+            this.rbtnArtan.Location = new System.Drawing.Point(498, 390);
+            this.rbtnArtan.Name = "rbtnArtan";
+            this.rbtnArtan.Size = new System.Drawing.Size(50, 17);
+            this.rbtnArtan.TabIndex = 9;
+            this.rbtnArtan.TabStop = true;
+            this.rbtnArtan.Text = "Artan";
+            this.rbtnArtan.UseVisualStyleBackColor = true;
+            // 
             // YonetimBirimiApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 496);
+            this.Controls.Add(this.rbtnArtan);
+            this.Controls.Add(this.rbtnAzalan);
             this.Controls.Add(this.btnSırala);
             this.Controls.Add(this.pBsürec);
             this.Controls.Add(this.btnSil);
@@ -124,6 +150,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.YonetimBirimiApplication_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,6 +163,8 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.ProgressBar pBsürec;
         private System.Windows.Forms.Button btnSırala;
+        private System.Windows.Forms.RadioButton rbtnAzalan;
+        private System.Windows.Forms.RadioButton rbtnArtan;
     }
 }
 

@@ -62,6 +62,7 @@
     <Compile Include="FormAddUpdate.Designer.cs">
       <DependentUpon>FormAddUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="merge_sort.cs" />
     <Compile Include="parttime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
