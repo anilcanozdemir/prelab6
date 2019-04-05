@@ -21,7 +21,7 @@ namespace StaffManagementVisualApplication
 
         }
 
-        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -62,12 +62,16 @@ namespace StaffManagementVisualApplication
 
             Yükle.InitialDirectory = "D:\\";
             Yükle.Title = "Eleman listesinin bulunduğu dosyayı seçin";
-            Yükle.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv|Json File|*.txt";
+            Yükle.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv";
 
             if (Yükle.ShowDialog() == DialogResult.OK)
             {
+
                 yol = Yükle.FileName;
             }
+            FileInfo bilgi = new FileInfo(yol);
+            float uzunluk = bilgi.Length;
+            float temp = 100 / uzunluk;
             int yüklefilter = Yükle.FilterIndex;
             if (yol != "")
             {
@@ -77,6 +81,7 @@ namespace StaffManagementVisualApplication
                     {
                         string[] Parcalanmisdesen;
                         string mydesen = reader.ReadLine();
+                        float desen_uzunlugu = (mydesen.Length * temp) + 1;
                         if (yüklefilter == 1)
                         {
                             Parcalanmisdesen = mydesen.Split(',');
@@ -85,10 +90,7 @@ namespace StaffManagementVisualApplication
                         {
                             Parcalanmisdesen = mydesen.Split('\t');
                         }
-                        else if (yüklefilter == 3)
-                        {
-                            Parcalanmisdesen = mydesen.Split();
-                        }
+
                         else
                         {
                             break;
@@ -125,17 +127,21 @@ namespace StaffManagementVisualApplication
                         isciozellik[4] = yeni.Bmoo.ToString();
                         employees.Add(yeni);
                         ListViewItem isci = new ListViewItem(isciozellik);
-
-                        employee.Counter = yeni._id;
+                        if (employee.Counter < yeni._id)
+                        {
+                            employee.Counter = yeni._id;
+                        }
                         lstviewİsci.Items.Add(isci);
                         
+                        pBsürec.Increment(Convert.ToInt32(desen_uzunlugu));
+
                     }
-                    
+
 
                 }
 
             }
-            
+
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
@@ -159,7 +165,7 @@ namespace StaffManagementVisualApplication
         {
             SaveFileDialog Kaydet = new SaveFileDialog();
             Kaydet.Title = "Eleman listesinin bulunduğu dosyayı seçin";
-            Kaydet.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv|Text File|*.txt";
+            Kaydet.Filter = "Comma Seperated File|*.csv|Tab Seperated File|*.tsv|Json File|*.txt";
 
             if (Kaydet.ShowDialog() == DialogResult.OK)
             {
@@ -167,47 +173,47 @@ namespace StaffManagementVisualApplication
                 int index = Kaydet.FilterIndex;
                 if (index == 1)
                 {
-                    prgrsbrsürec.Value = 0;
+                    pBsürec.Value = 0;
                     int temp = 100 / employees.Count + 1;
                     foreach (employee S in employees)
                     {
-                        
-                       
+
+
                         writer.WriteLine(S._id + "," + S._isim + "," + S._soyisim + "," + S._adres + "," + S._maas + "," + S._tecrube + "," + S._sehir + "," + S._ogrenim_seviyesi + "," + S._belge_ingilizce + "," + S._okul_ingilizce + "," + S._yabanci_dil_sayisi + "," + S._yoneticilik_gorevi + "," + S._evli_mi + "," + S._kucuk_cocuk + "," + S._ortanca_cocuk + "," + S._buyuk_cocuk + "," + S._esi_calismiyomu + "," + S.Photo);
-                        prgrsbrsürec.Increment(temp);
+                        pBsürec.Increment(temp);
                     }
                     writer.Close();
-                    
-                    
+
+
                 }
                 if (index == 2)
                 {
-                    prgrsbrsürec.Value = 0;
+                    pBsürec.Value = 0;
                     int temp = 100 / employees.Count + 1;
                     foreach (employee S in employees)
                     {
-                        
-                       
+
+
                         writer.WriteLine(S._id + "\t" + S._isim + "\t" + S._soyisim + "\t" + S._adres + "\t" + S._maas + "\t" + S._tecrube + "\t" + S._sehir + "\t" + S._ogrenim_seviyesi + "\t" + S._belge_ingilizce + "\t" + S._okul_ingilizce + "\t" + S._yabanci_dil_sayisi + "\t" + S._yoneticilik_gorevi + "\t" + S._evli_mi + "\t" + S._kucuk_cocuk + "\t" + S._ortanca_cocuk + "\t" + S._buyuk_cocuk + "\t" + S._esi_calismiyomu + "\t" + S.Photo);
-                        prgrsbrsürec.Increment(temp);
+                        pBsürec.Increment(temp);
                     }
                     writer.Close();
-                    
+
 
                 }
                 if (index == 3)
                 {
-                    prgrsbrsürec.Value = 0;
+                    pBsürec.Value = 0;
                     int temp = 100 / employees.Count + 1;
                     foreach (employee S in employees)
                     {
-                        
-                        
+
+
                         writer.WriteLine(S.Donustur());
-                        prgrsbrsürec.Increment(temp);
+                        pBsürec.Increment(temp);
                     }
                     writer.Close();
-                    
+
                 }
             }
 
@@ -265,8 +271,13 @@ namespace StaffManagementVisualApplication
             {
                 e.Cancel = false;
                 return;
-                
+
             }
+        }
+
+        private void btnSırala_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

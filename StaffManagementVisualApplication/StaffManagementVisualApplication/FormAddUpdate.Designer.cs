@@ -63,6 +63,7 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.picbxfoto = new System.Windows.Forms.PictureBox();
             this.btnfoto = new System.Windows.Forms.Button();
+            this.chckbxParttime = new System.Windows.Forms.CheckBox();
             this.grpbxAile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbxfoto)).BeginInit();
             this.SuspendLayout();
@@ -494,11 +495,22 @@
             this.btnfoto.UseVisualStyleBackColor = true;
             this.btnfoto.Click += new System.EventHandler(this.btnfoto_Click);
             // 
+            // chckbxParttime
+            // 
+            this.chckbxParttime.AutoSize = true;
+            this.chckbxParttime.Location = new System.Drawing.Point(691, 376);
+            this.chckbxParttime.Name = "chckbxParttime";
+            this.chckbxParttime.Size = new System.Drawing.Size(84, 17);
+            this.chckbxParttime.TabIndex = 60;
+            this.chckbxParttime.Text = "Yarı Zamanlı";
+            this.chckbxParttime.UseVisualStyleBackColor = true;
+            // 
             // FormAddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 497);
+            this.Controls.Add(this.chckbxParttime);
             this.Controls.Add(this.btnfoto);
             this.Controls.Add(this.picbxfoto);
             this.Controls.Add(this.btnKaydet);
@@ -575,5 +587,6 @@
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.PictureBox picbxfoto;
         private System.Windows.Forms.Button btnfoto;
+        private System.Windows.Forms.CheckBox chckbxParttime;
     }
 }

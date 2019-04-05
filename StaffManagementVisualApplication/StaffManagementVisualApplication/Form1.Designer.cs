@@ -33,7 +33,8 @@
             this.btnYükle = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
-            this.prgrsbrsürec = new System.Windows.Forms.ProgressBar();
+            this.pBsürec = new System.Windows.Forms.ProgressBar();
+            this.btnSırala = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -89,19 +90,30 @@
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // prgrsbrsürec
+            // pBsürec
             // 
-            this.prgrsbrsürec.Location = new System.Drawing.Point(12, 364);
-            this.prgrsbrsürec.Name = "prgrsbrsürec";
-            this.prgrsbrsürec.Size = new System.Drawing.Size(400, 20);
-            this.prgrsbrsürec.TabIndex = 6;
+            this.pBsürec.Location = new System.Drawing.Point(12, 364);
+            this.pBsürec.Name = "pBsürec";
+            this.pBsürec.Size = new System.Drawing.Size(400, 20);
+            this.pBsürec.TabIndex = 6;
+            // 
+            // btnSırala
+            // 
+            this.btnSırala.Location = new System.Drawing.Point(337, 334);
+            this.btnSırala.Name = "btnSırala";
+            this.btnSırala.Size = new System.Drawing.Size(75, 23);
+            this.btnSırala.TabIndex = 7;
+            this.btnSırala.Text = "Sırala";
+            this.btnSırala.UseVisualStyleBackColor = true;
+            this.btnSırala.Click += new System.EventHandler(this.btnSırala_Click);
             // 
             // YonetimBirimiApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 496);
-            this.Controls.Add(this.prgrsbrsürec);
+            this.Controls.Add(this.btnSırala);
+            this.Controls.Add(this.pBsürec);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnYükle);
@@ -122,7 +134,8 @@
         private System.Windows.Forms.Button btnYükle;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.ProgressBar prgrsbrsürec;
+        private System.Windows.Forms.ProgressBar pBsürec;
+        private System.Windows.Forms.Button btnSırala;
     }
 }
 

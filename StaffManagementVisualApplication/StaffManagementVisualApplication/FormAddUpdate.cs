@@ -21,61 +21,59 @@ namespace StaffManagementVisualApplication
             InitializeComponent();
         }
 
-
-        
-
-
-
-     public void Kaydet()
-        {
-            if (txtisim.Text != "" && txtsoyisim.Text != "" && txtadres.Text != "" && txtmaas.Text != "" && cmbsehir.SelectedItem != null && cmbegitim.SelectedItem != null && cmbyoneticilik.SelectedItem != null)
+            public void Kaydet()
             {
 
-                employee yeni = new employee();
-                yeni._isim = txtisim.Text;
-                yeni._soyisim = txtsoyisim.Text;
-                yeni._adres = txtadres.Text;
-                yeni._maas = Convert.ToInt32(txtmaas.Text);
-                if (txttecrube.Text != "")
-                    yeni._tecrube = Convert.ToInt32(txttecrube.Text);
-                yeni._sehir = cmbsehir.SelectedIndex;
-                yeni._ogrenim_seviyesi = cmbegitim.SelectedIndex;
-                yeni._yoneticilik_gorevi = cmbyoneticilik.SelectedIndex;
-                yeni._belge_ingilizce = chckingilizce.Checked;
-                
-                yeni._okul_ingilizce = chckingilizceokul.Checked;
-                if (txtlanguage.Text != "")
-                    yeni._yabanci_dil_sayisi = Convert.ToInt32(txtlanguage.Text);
-                yeni._evli_mi = rbtnEvli.Checked;
-                yeni._esi_calismiyomu = chckbxesicalismiyor.Checked;
-                if (chckbxkucuk.Checked)
+
+                if (txtisim.Text != "" && txtsoyisim.Text != "" && txtadres.Text != "" && txtmaas.Text != "" && cmbsehir.SelectedItem != null && cmbegitim.SelectedItem != null && cmbyoneticilik.SelectedItem != null)
                 {
-                    yeni._kucuk_cocuk = Convert.ToInt32(txtkucuk.Text);
+                    employee yeni = new employee();
+
+                    yeni._isim = txtisim.Text;
+                    yeni._soyisim = txtsoyisim.Text;
+                    yeni._adres = txtadres.Text;
+                    yeni._maas = Convert.ToInt32(txtmaas.Text);
+                    if (txttecrube.Text != "")
+                        yeni._tecrube = Convert.ToInt32(txttecrube.Text);
+                    yeni._sehir = cmbsehir.SelectedIndex;
+                    yeni._ogrenim_seviyesi = cmbegitim.SelectedIndex;
+                    yeni._yoneticilik_gorevi = cmbyoneticilik.SelectedIndex;
+                    yeni._belge_ingilizce = chckingilizce.Checked;
+
+                    yeni._okul_ingilizce = chckingilizceokul.Checked;
+                    if (txtlanguage.Text != "")
+                        yeni._yabanci_dil_sayisi = Convert.ToInt32(txtlanguage.Text);
+                    yeni._evli_mi = rbtnEvli.Checked;
+                    yeni._esi_calismiyomu = chckbxesicalismiyor.Checked;
+                    if (chckbxkucuk.Checked)
+                    {
+                        yeni._kucuk_cocuk = Convert.ToInt32(txtkucuk.Text);
+                    }
+                    if (chckbxortanca.Checked)
+                    {
+                        yeni._ortanca_cocuk = Convert.ToInt32(txtortanca.Text);
+                    }
+                    if (chckbxbuyuk.Checked)
+                    {
+                        yeni._buyuk_cocuk = Convert.ToInt32(txtbuyuk.Text);
+                    }
+                    if (yeni._id == 0)
+                    {
+                        employee.Counter++;
+                        yeni._id = employee.Counter;
+                    }
+                    if (picbxfoto.ImageLocation != "")
+                    {
+                        yeni.Photo = picbxfoto.ImageLocation;
+                    }
+                    yeni.Bmoo = yeni.bmo();
+                    staff = yeni;
+
+
                 }
-                if (chckbxortanca.Checked)
-                {
-                    yeni._ortanca_cocuk = Convert.ToInt32(txtortanca.Text);
-                }
-                if (chckbxbuyuk.Checked)
-                {
-                    yeni._buyuk_cocuk = Convert.ToInt32(txtbuyuk.Text);
-                }
-                if (yeni._id == 0)
-                {
-                    employee.Counter++;
-                    yeni._id = employee.Counter;
-                }
-                if (picbxfoto.ImageLocation != "")
-                {
-                    yeni.Photo = picbxfoto.ImageLocation;
-                }
-                yeni.Bmoo = yeni.bmo();
-                staff = yeni;
-                
-               
+
             }
-           
-        }
+        
         internal employee Staff
         {
             get
@@ -91,11 +89,16 @@ namespace StaffManagementVisualApplication
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            
-        
-            Kaydet();
-            this.Hide();
-            
+
+            if (chckbxParttime.Checked == false)
+            {
+                Kaydet();
+                this.Hide();
+            }
+            else
+            {
+                
+            }
         }
 
         private void rbtnEvli_CheckedChanged(object sender, EventArgs e)
@@ -172,7 +175,7 @@ namespace StaffManagementVisualApplication
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        
+
 
         private void txtlanguage_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -223,7 +226,7 @@ namespace StaffManagementVisualApplication
                     chckbxbuyuk.Checked = true;
                 if (staff._buyuk_cocuk == 0)
                     chckbxbuyuk.Checked = false;
-                if(staff.Photo!="")
+                if (staff.Photo != "")
                 {
                     picbxfoto.ImageLocation = staff.Photo;
                 }
@@ -236,14 +239,16 @@ namespace StaffManagementVisualApplication
             OpenFileDialog openfoto = new OpenFileDialog();
             openfoto.Filter = "Png|*.png|Jpeg|*.jpeg|Jpg|*.jpg";
             string yol = "";
-            if(openfoto.ShowDialog()==DialogResult.OK)
+            if (openfoto.ShowDialog() == DialogResult.OK)
             {
                 yol = openfoto.FileName;
 
             }
             picbxfoto.ImageLocation = yol;
-            
+
 
         }
+
+
     }
 }
